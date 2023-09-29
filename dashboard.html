@@ -6,27 +6,73 @@
     <title>Climate360° | Dashboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dashboardStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        :root{
+            --icon-color-before: #737880;
+            --icon-color-after: #F0F1F1;
+        }
+    </style>
 </head>
 <body>
-    <div id="tile-container">
-        <section class="box">
-            <label for="logo"><i></i></label>
-            <a href="#"><span>Weather</span></a>
-            <a href="#"><span>Settings</span></a>
-        </section>
-        <input class="box" style="height:32px" placeholder="   Search">
-        <section class="box">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora placeat quam ex earum illo eos, fuga eligendi. Iure, rem molestias tempore quibusdam laboriosam blanditiis obcaecati ab alias? Assumenda, laudantium. Veniam.
-        </section>
-        <section class="box">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam maiores obcaecati porro! Quo quia illo asperiores molestiae veritatis ut, aut ullam distinctio vero libero nulla similique, odio pariatur, est nihil?
-        </section>
-        <section class="box">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate quidem adipisci sint autem doloribus eum, dolorem distinctio asperiores laboriosam vel molestiae eos minima porro magnam quia non unde ab nobis.
-        </section>
-        <section class="box">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus fugit culpa quisquam autem pariatur aspernatur numquam exercitationem at, natus fuga provident voluptate ducimus possimus dolorum nobis reprehenderit odio, quam molestias.
-        </section>
-    </div>
+    <main>
+        <div id="tile-container">
+            <section class="box menuPane" style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
+                <a href="./frontCover.html"><img src="./3d-weather-logo.png" alt="logo" style="width: 30px; height: 30px; filter: contrast(-1);"></a>
+                <a href="main"><span class="material-symbols-outlined" style="color: var(--icon-color-after)">thermostat</span></a>
+                <a href="#"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">lists</span></a>
+                <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-before)">tune</span></a>
+            </section>
+            <input class="box" placeholder="Search">
+            <section class="box" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
+                <div id="dataPane">
+                    <p id="cityName" class="data">Madrid<span id="countryName" style="font-size: 20px; font-style: normal; font-weight: 400;"> , Spain</span></p>
+                    <p id="chanceOfRain" class="data">Chance of rain: 0%</p>
+                    <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: -6px; left: -5px;">C</sup></p>
+                </div>
+                <div class="mainImageIcon"></div>
+            </section>
+            <section class="box">
+                <p style="color: var(--icon-color-before); margin-top: 15px; margin-left: 15px; font-size: 12px; font-weight: 650;">TODAY'S FORECAST</p>
+                <ul id="dailyForecast">
+                    <li>
+                        6:00 AM
+                    <div id="div1" class="forecastBox"></div>
+                    </li>
+                    <li>
+                        9:00 AM
+                    <div id="div1"></div>
+                    </li>
+                    <li>
+                        12:00 PM
+                    <div id="div1"></div>
+                    </li>
+                    <li>
+                        3:00 PM
+                    <div id="div1"></div>
+                    </li>
+                    <li>
+                        6:00 PM
+                    <div id="div1"></div>
+                    </li>
+                    <li style="border-right:none">
+                        9:00 PM
+                    <div id="div1"></div>
+                    </li>
+                </ul>
+            </section>
+            <section class="box">
+                <div id="heading" style="color:var(--icon-color-before); display:flex; flex-wrap: nowrap; justify-content: space-between;">
+                    <p style="margin-top: 15px; font-weight: 650;">AIR CONDITIONS</p> 
+                    <button id="seeMoreBtn">See More</button>
+                </div>
+            </section>
+            <section class="box">
+                    <p style="color:var(--icon-color-before); margin-top: 30px;margin-left: 10px; font-weight: 650;">5-DAY FORECAST</p> 
+            </section>
+        </div>
+    </main>
 </body>
 </html>
