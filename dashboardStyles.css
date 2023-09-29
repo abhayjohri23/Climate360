@@ -55,12 +55,11 @@ body{
 }
 
 .box:nth-child(5) {
-    /* background-color: rgba(204, 30, 30);  */
     padding-left: 20px;
     height: 80%;
     grid-row-start: 4;
     grid-column: span 3;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .box:nth-child(6) {
@@ -171,5 +170,98 @@ body{
 }
 
 .forecastBox {
-    
+    margin: 10px;
+    margin-bottom: 6px;
+    background-color: rgba(255,255,255,0.1);
+    width: 5rem;
+    height: 5rem;
+}
+
+.divSpans {
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.foreCastcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.forecastBox:nth-child(1){
+    background: url(./weather-main-icons-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -45px -80px;
+}
+
+#airCondContainer {
+    margin-left: 0px;
+    margin-right: 5px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.airConditem {
+    margin: 1rem;
+    display: inline-block;
+    width: 40%;
+    height: 30%;
+    border: 1px dashed white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+#daysFCcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.daysFCitem {
+    margin: 0.5rem;
+    display: inline-block;
+    width: 90%;
+    height: 90px;
+    border-bottom: 0.5px solid #737880;
+    font-weight: 600;
+}
+
+
+::-webkit-scrollbar{
+    border-right: 5px solid inherit;
+    background-color: rgba(116, 121, 129, 0);
+    border:1px solid rgb(32, 43, 59);
+    width: .5rem;
+    height: 80vh;
+    border-radius: 100vw;
+    margin-block: 1.5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background-color: rgba(116, 121, 129, 0.7);
+}
+
+::-webkit-scrollbar:hover{
+    border-right: 5px solid inherit;
+    background-color: rgba(116, 121, 129, 0);
+}
+
+::-webkit-scrollbar-track {
+    border-right: 5px solid inherit;
+    background-color: rgba(116, 121, 129, 0);
+    border:1px solid rgb(32, 43, 59);
+    width: .5rem;
+    border-radius: 100vw;
+    margin-block: 1em;
 }
