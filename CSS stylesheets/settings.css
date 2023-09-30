@@ -93,7 +93,7 @@ body{
     width: 95%;
     height: 1.65rem;
     background-color: #0B131E;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
 }
 
 .slider {
@@ -103,9 +103,9 @@ body{
     transform: translateY(-54%) translateX(2px);
     transition: 0.4s;
     background-color: #35455E;
-    width: 45%;
+    width: 50%;
     height: 1.3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.80rem;
     cursor: pointer;
 }
 
