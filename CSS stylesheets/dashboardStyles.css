@@ -80,7 +80,7 @@ body{
 }
 
 .icon {
-    background: url('3d-weather-logo.png');
+    background: url('Icons and Images\3d-weather-logo.png');
     height: 25px;
     width: 25px;
     display: block;
@@ -124,7 +124,7 @@ body{
 .mainImageIcon{
     width: 30%;
     height:100%;
-    background: url(./weather-main-icons-sprite.png);
+    background: url('Icons and Images\weather-main-icons-sprite.png');
     background-repeat: no-repeat;
     background-position: -45px -80px;
 }
@@ -192,7 +192,7 @@ body{
 }
 
 .forecastBox:nth-child(1){
-    background: url(./weather-main-icons-sprite.png);
+    background: url('Icons and Images\weather-main-icons-sprite.png');
     background-repeat: no-repeat;
     background-position: -45px -80px;
 }
