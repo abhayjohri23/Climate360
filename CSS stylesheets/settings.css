@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Ubuntu&display=swap');
+
+
+body{
+    margin: 0%;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+
+}
+.box {
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #202B3B;
+}
+
+#tile-container {
+    margin: 10px 15px;
+    width: 98%;
+    height: 98vh;
+    display: grid;
+    gap: 15px 20px;
+    grid-template-columns: 5% repeat(5,1fr);
+    grid-template-rows: 5% 25% 25% 45%;
+}
+
+.menuPane {
+    padding: 30px 10px;
+    height: 70vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    gap: 30px;
+    border-radius: 20px;
+}
+
+.box:nth-child(1){
+    grid-column-start: 1;
+    grid-row: 1 / span 4;
+}
+
+.box:nth-child(2){
+    grid-column: span 3;
+    color: #e0e1e1; 
+    font-weight: 400; 
+    height:32px; 
+    border:none; 
+    padding-left: 15px; 
+    outline: none; 
+    font-size: 14px;
+}
+
+.box:nth-child(3){
+    grid-row: 2/span 2;
+    grid-column: span 3;
+    background-color: inherit;
+}
+
+.box:nth-child(4) {
+    grid-row-start: 4;
+    grid-column: 2/span 1;
+}
+
+.scrollContainer {
+    font-size: 14px;
+    font-weight: 600;
+    color: #9399A2;
+    padding: 15px;
+    display: block;
+    width: 96.5%;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #202B3B;
+}
+
+.box:nth-child(5) {
+    position: relative;
+    top: 3rem;
+    padding-left: 20px;
+    height: 82%;
+    grid-row: 2/span 1;
+    grid-column: 5/span 2;
+}
+
+.scrollContainer p{
+    font-size: 13px;
+}
+
+.switch {
+    position: relative;
+    display: block;
+    width: 95%;
+    height: 1.65rem;
+    background-color: #0B131E;
+    border-radius: 0.5rem;
+}
+
+.slider {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-54%) translateX(2px);
+    transition: 0.4s;
+    background-color: #35455E;
+    width: 45%;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.inputUnits input {
+    display: none;
+}
+
+.slider:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-54%) translateX(2px);
+    transition: 0.4s;
+    background-color: #35455E;
+    width: 45%;
+    height: 1.3rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+input.checkedBox:checked + .slider {
+    background-color: #35455E;
+}
+
+input.checkedBox:checked + .slider:before {
+    transform: translateX(40px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar{
+    border-right: 5px solid inherit;
+    background-color: rgba(116, 121, 129, 0);
+    /* border:1px solid rgb(32, 43, 59); */
+    width: .5rem;
+    height: 80vh;
+    border-radius: 100vw;
+    margin-block: 1.5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 100vw;
+    background-color: rgba(116, 121, 129, 0.7);
+}
+
+::-webkit-scrollbar:hover{
+    /* border-right: 5px solid inherit; */
+    background-color: rgba(116, 121, 129, 0);
+}
+
+::-webkit-scrollbar-track {
+    border-right: 5px solid inherit;
+    background-color: rgba(116, 121, 129, 0);
+    /* border:1px solid rgb(32, 43, 59); */
+    width: .5rem;
+    border-radius: 100vw;
+    margin-block: 1em;
+}
