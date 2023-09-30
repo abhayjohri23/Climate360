@@ -56,7 +56,7 @@ body{
 
 .box:nth-child(5) {
     padding-left: 20px;
-    height: 80%;
+    height: 82%;
     grid-row-start: 4;
     grid-column: span 3;
     overflow-y: hidden;
@@ -64,7 +64,7 @@ body{
 
 .box:nth-child(6) {
     padding-left: 20px;
-    height: 87%;
+    height: 88%;
     grid-row: 2/span 5;
     grid-column: 5/span 2;
 }
@@ -213,9 +213,7 @@ body{
     display: inline-block;
     width: 40%;
     height: 30%;
-    /* border: 1px dashed white; */
-    background-color: lightgray;
-    /* border-radius: 10px; */
+    /* background-color: lightgray; */
     font-weight: 600;
 }
 
@@ -229,19 +227,89 @@ body{
 }
 
 .daysFCitem {
-    margin: 0.5rem;
-    display: inline-block;
     width: 90%;
-    height: 90px;
+    height: 12vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly;
     border-bottom: 0.5px solid #737880;
+    margin: 0.5rem;
     font-weight: 600;
 }
+
+.whichDay{
+    position: relative;
+    left: -4rem;
+    top: -0.6rem;
+    color: #8c929c;
+    font-size: 12px;
+    font-weight: 550;
+}
+
+.whatWeather{
+    color: #e0e1e1;
+    font-size: 12px;
+    font-weight: 580;
+}
+
+.max_min{
+    color: #8c929c;
+    font-size: 12px;
+    font-weight: 580;
+}
+
+.airCondHeader {
+    color:#8c929c;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.airCondHeader p{
+    margin-top: 0.2rem;
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+
+.airCondValue {
+    margin-left: 2rem;
+    font-size: 24px;
+    font-weight: 600;
+    color: #e0e1e1;
+}
+
+
+.daysFCitem:nth-child(5){
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ::-webkit-scrollbar{
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    border:1px solid rgb(32, 43, 59);
+    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -254,14 +322,14 @@ body{
 }
 
 ::-webkit-scrollbar:hover{
-    border-right: 5px solid inherit;
+    /* border-right: 5px solid inherit; */
     background-color: rgba(116, 121, 129, 0);
 }
 
 ::-webkit-scrollbar-track {
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    border:1px solid rgb(32, 43, 59);
+    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;

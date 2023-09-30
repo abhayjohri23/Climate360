@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../CSS stylesheets/dashboardStyles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
     <style>
         :root{
             --icon-color-before: #737880;
@@ -21,7 +21,7 @@
         <div id="tile-container">
             <section class="box menuPane" style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
                 <a href="./frontCover.html"><img src="../Icons and Images/3d-weather-logo.png" alt="logo" style="width: 30px; height: 30px; filter: contrast(-1);"></a>
-                <a href="main"><span class="material-symbols-outlined" style="color: var(--icon-color-after)">thermostat</span></a>
+                <a href="main"><span class="material-symbols-outlined" style="color: var(--icon-color-after)">partly_cloudy_day</span></a>
                 <a href="#"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">lists</span></a>
                 <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-before)">tune</span></a>
             </section>
@@ -81,48 +81,135 @@
                     </li>
                 </ul>
             </section>
-            <section id="lastbox" class="box">
+            <section class="box">
                 <div id="heading" style="color:var(--icon-color-before); display:flex; flex-wrap: nowrap; justify-content: space-between;">
                     <p style="margin-top: 15px; font-weight: 650;">AIR CONDITIONS</p> 
                     <button id="seeMoreBtn">See More</button>
                 </div>
                 <div id="airCondContainer">
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                thermostat
+                            </span>
+                            <p style="margin-top: 2px;">FEELS LIKE</p>
+                        </div>
+                        <div class="airCondValue">
+                            60<sup id="feelsUnit" style="font-size: 20px;"> °</sup>
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                air
+                            </span>
+                            <p style="margin-top: 0.25rem;">WIND SPEED</p>
+                        </div>
+                        <div class="airCondValue">
+                            24 <span id="wsUnit" style="font-size: 20px;">km/hr</span>
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader" style="position: relative; top: -5px;">
+                            <span class="material-symbols-outlined">
+                                humidity_percentage
+                            </span>
+                            <p style="margin-top: 0.25rem;">HUMIDITY</p>
+                        </div>
+                        <div class="airCondValue">
+                            60 <span id="humidUnit" style="font-size: 20px;"> %</span>
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                            <p style="margin-top: 0.20rem;">VISIBILITY</p>
+                        </div>
+                        <div class="airCondValue">
+                            12 <span id="humidUnit" style="font-size: 20px;"> km</span>
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                dew_point
+                            </span>
+                            <p>DEW POINT</p>
+                        </div>
+                        <div class="airCondValue">
+                            60°
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                wb_sunny
+                            </span>
+                            <p>UV INDEX</p>
+                        </div>
+                        <div class="airCondValue">
+                            0
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                ac_unit
+                            </span>
+                            <p>WIND CHILLS</p>
+                        </div>
+                        <div class="airCondValue">
+                            47
+                        </div>
                     </div>
                     <div class="airConditem">
-                        DIV
+                        <div class="airCondHeader">
+                            <span class="material-symbols-outlined">
+                                foggy
+                            </span>
+                            <p>CLOUD COVER</p>
+                        </div>
+                        <div class="airCondValue">
+                            47
+                        </div>
                     </div>
                 </div>
             </section>
             <section class="box">
                     <p style="color:var(--icon-color-before); margin-top: 30px;margin-left: 10px; font-weight: 650;">5-DAY FORECAST</p> 
                     <div id="daysFCcontainer">
-                        <div class="daysFCitem">
-                            DIV
+                        <div id="module1" class="daysFCitem">
+                            <p class="whichDay">TODAY</p>
+                            <div class="fcIcon"></div>
+                            <p class="whatWeather">Sunny</p>
+                            <p class="max_min">32/21</p>
                         </div>
-                        <div class="daysFCitem">DIV</div>
-                        <div class="daysFCitem">DIV</div>
-                        <div class="daysFCitem">DIV</div>
-                        <div class="daysFCitem">DIV</div>
+                        <div id="module2" class="daysFCitem">
+                            <p class="whichDay">MONDAY</p>
+                            <div class="fcIcon"></div>
+                            <p class="whatWeather">Sunny</p>
+                            <p class="max_min">32/21</p>
+                        </div>
+                        <div id="module3" class="daysFCitem">
+                            <p class="whichDay">TUESDAY</p>
+                            <div class="fcIcon"></div>
+                            <p class="whatWeather">Sunny</p>
+                            <p class="max_min">32/21</p>
+                        </div>
+                        <div id="module4" class="daysFCitem">
+                            <p class="whichDay">WEDNESDAY</p>
+                            <div class="fcIcon"></div>
+                            <p class="whatWeather">Sunny</p>
+                            <p class="max_min">32/21</p>
+                        </div>
+                        <div id="module5" class="daysFCitem">
+                            <p class="whichDay">THURSDAY</p>
+                            <div class="fcIcon"></div>
+                            <p class="whatWeather">Sunny</p>
+                            <p class="max_min">32/21</p>
+                        </div>
                     </div>
             </section>
         </div>
