@@ -21,9 +21,9 @@
         <div id="tile-container">
             <section class="box menuPane" style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
                 <a href="./frontCover.html"><img src="../Icons and Images/3d-weather-logo.png" alt="logo" style="width: 30px; height: 30px; filter: contrast(-1);"></a>
-                <a href="./dashboard.html"><span class="material-symbols-outlined" style="color: var(--icon-color-after)">partly_cloudy_day</span></a>
+                <a href="./dashboard.html"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">partly_cloudy_day</span></a>
                 <a href="#"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">lists</span></a>
-                <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-before)">tune</span></a>
+                <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-after)">tune</span></a>
                 <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-before)">support_agent</span></a>
             </section>
             <input class="box" placeholder="Search for cities">
@@ -31,43 +31,39 @@
                 <p style="font-size: 15px; color:#F0F1F1;font-weight: 600;padding-left: 10px;">Units</p>
                 <section class="scrollContainer">
                     <p>TEMPRATURE</p>
-                    <label class="switch">
-                        <div class="inputUnits" style="display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
-                            <input type="checkbox" checked class="checkedBox">
-                            <span class="slider"></span>
-                        </div>
-                    </label>
-                   <p>WIND SPEED</p>
-                   <label class="switch">
-                        <div class="inputUnits" style="display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
-                            <input type="checkbox" checked class="checkedBox">
-                            <span class="slider"></span>
-                        </div>
-                    </label>
-                   <p>PRESSURE</p>
-                   <label class="switch">
-                        <div class="inputUnits" style="display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
-                            <input type="checkbox" checked class="checkedBox">
-                            <span class="slider"></span>
-                        </div>
-                    </label>
-                   <p>DISTANCE</p>
-                   <label class="switch">
-                    <div class="inputUnits" style="display: flex; flex-wrap: nowrap; justify-content: space-evenly;">
-                        <input type="checkbox" checked class="checkedBox">
-                        <span class="slider"></span>
+                    <div class="toggleButton">
+                        <div class="toggleThumb"></div>
+                        <button type="button" class="btnOptions optnStyle leftBtn">FARHENHEIT</button>
+                        <button type="button" class="btnOptions optnStyle rightBtn">CELCIUS</button>
                     </div>
-                </label>
+                   <p>WIND SPEED</p>
+                   <div class="toggleButton">
+                        <div class="toggleThumb"></div>
+                        <button type="button" class="btnOptions optnStyle leftBtn" style="margin-right: 20%;">MPS</button>
+                        <button type="button" class="btnOptions optnStyle rightBtn">MPHR</button>
+                    </div>
+                   <p>PRESSURE</p>
+                   <div class="toggleButton">
+                        <div class="toggleThumb"></div>
+                        <button type="button" class="btnOptions optnStyle leftBtn" style="margin-right: 20%;">HPA</button>
+                        <button type="button" class="btnOptions optnStyle rightBtn">HG</button>
+                    </div>
+                   <p>DISTANCE</p>
+                   <div class="toggleButton">
+                        <div class="toggleThumb"></div>
+                        <button type="button" class="btnOptions optnStyle leftBtn">KILOMETERS</button>
+                        <button type="button" class="btnOptions optnStyle rightBtn">MILES</button>
+                    </div>
                 </section>
             </section>
-            
             <section class="box">
-                <p style="color: var(--icon-color-before); margin-top: 15px; margin-left: 15px; font-size: 12px; font-weight: 650;">TODAY'S FORECAST</p>
+                <p style="color: var(--icon-color-before); margin-top: 15px; margin-left: 15px; font-size: 14px; font-weight: 650;">NOTIFICATIONS</p>
             </section>
             <section class="box">
-                    <p style="margin-top: 15px; font-weight: 650;"></p> 
+                    <p style="color: var(--icon-color-before); margin-top: 14px; font-weight: 650;">CHANGE THEMES</p> 
             </section>
         </div>
     </main>
+    <script src="../Scripts/index.js"></script>
 </body>
 </html>
