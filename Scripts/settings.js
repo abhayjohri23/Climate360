@@ -14,3 +14,15 @@ for(let rightBtn of rightBtns){
         toggler.style.left = '49.6%';
     });
 }
+
+const leftToggle = document.querySelector('.leftToggle');
+leftToggle.addEventListener("click",(event) => {
+    var toggler = event.target.parentElement.querySelector('.switchThumb');
+    toggler.style.left = '0.4%'
+});
+
+const rightToggle = document.querySelector('.rightToggle');
+rightToggle.addEventListener("click",(event) => {
+    var toggler = event.target.parentElement.querySelector('.switchThumb');
+    toggler.style.left = '44%'
+});

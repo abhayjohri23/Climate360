@@ -22,8 +22,8 @@
             <section class="box menuPane" style="display: flex; flex-wrap: wrap; flex-direction: column; align-items: center;">
                 <a href="./frontCover.html"><img src="../Icons and Images/3d-weather-logo.png" alt="logo" style="width: 30px; height: 30px; filter: contrast(-1);"></a>
                 <a href="./dashboard.html"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">partly_cloudy_day</span></a>
-                <a href="#"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">lists</span></a>
-                <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-after)">tune</span></a>
+                <a href="./nearbyCities.html"><span class="material-symbols-outlined" style="color: var(--icon-color-before)">lists</span></a>
+                <a href="./settings.html"><span class="material-symbols-outlined" style="color:  var(--icon-color-after)">tune</span></a>
                 <a href="#"><span class="material-symbols-outlined" style="color:  var(--icon-color-before)">support_agent</span></a>
             </section>
             <input class="box" placeholder="Search for cities">
@@ -57,13 +57,32 @@
                 </section>
             </section>
             <section class="box">
-                <p style="color: var(--icon-color-before); margin-top: 15px; margin-left: 15px; font-size: 14px; font-weight: 650;">NOTIFICATIONS</p>
+                <p style="color: var(--icon-color-before); font-size: 14px; margin-top: 14px; font-weight: 650">ACCESSIBILITY</p>
+                <p style="color: var(--icon-color-before);font-size: 12px; margin-top: 14px; font-weight: 650;">Accessibility features like Text-to-Speech Compatibility is in development stage and will be released soon. Stay Tuned!</p>
+                <div id="ttsFeature" style="top:1rem; display: flex;flex-wrap: nowrap;flex-direction: row;justify-content: space-between;align-items: center;
+                    margin-right: 2.5%;">
+                        <p style="color: #c0c3c3;font-size: 13px;margin-top: 14px; font-weight: 650;">Text-to-Speech Recognition</p>
+                        <div class="switchButton">
+                            <div class="switchThumb"></div>
+                            <button type="button" class="btnOptions leftBtn"></button>
+                            <button type="button" class="btnOptions rightBtn"></button>
+                        </div>
+                </div>
             </section>
             <section class="box">
-                    <p style="color: var(--icon-color-before); margin-top: 14px; font-weight: 650;">CHANGE THEMES</p> 
+                    <p style="color: var(--icon-color-before);font-size: 14px; margin-top: 14px; font-weight: 650">CHANGE THEMES</p> 
+                    <div id="themesChange" style="display: flex;flex-wrap: nowrap;flex-direction: row;justify-content: space-between;align-items: center;
+                    margin-right: 2.5%;">
+                        <p style="color: #c0c3c3;font-size: 12px;margin-top: 14px; font-weight: 650;">DARK MODE / LIGHT MODE</p>
+                        <div class="switchButton">
+                            <div class="switchThumb"></div>
+                            <button type="button" class="btnOptions leftToggle"></button>
+                            <button type="button" class="btnOptions rightToggle"></button>
+                        </div>
+                    </div>
             </section>
         </div>
     </main>
-    <script src="../Scripts/index.js"></script>
+    <script src="../Scripts/settings.js"></script>
 </body>
 </html>
