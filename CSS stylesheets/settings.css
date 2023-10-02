@@ -165,6 +165,45 @@ body{
 }
 
 
+/* Second Icon Styling inside the side menu panel */
+#secIcon{
+    color:var(--icon-color-before);
+}
+
+#secIcon:hover{
+    color:var(--icon-color-after);
+}
+
+/* Third Icon Styling inside the side menu panel */
+
+#thirdIcon{
+    color:var(--icon-color-before);
+}
+
+#thirdIcon:hover{
+    color:var(--icon-color-after);
+}
+
+/* Fourth Icon Styling inside the side menu panel */
+
+#fourthIcon{
+    color:var(--icon-color-after);
+}
+
+#fourthIcon:hover{
+    color:var(--icon-color-after);
+}
+
+/* Fifth Icon Styling inside the side menu panel */
+
+#fifthIcon{
+    color: var(--icon-color-before);
+}
+
+#fifthIcon:hover{
+    color: var(--icon-color-after);
+}
+
 
 
 
