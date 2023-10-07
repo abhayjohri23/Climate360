@@ -2,6 +2,7 @@
 :root{
     --icon-color-before: #737880;
     --icon-color-after: #F0F1F1;
+    --background-color: #0b131e;
 }
 
 body{
@@ -10,6 +11,7 @@ body{
     height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
+    background-color: var(--background-color);
 
 }
 .box {
@@ -29,13 +31,11 @@ body{
 }
 
 .box:nth-child(1){
-    /* background-color: pink; */
     grid-column-start: 1;
     grid-row: 1 / span 4;
 }
 
 .box:nth-child(2){
-    /* background-color: orange; */
     grid-column: span 3;
     color: #e0e1e1; 
     font-weight: 400; 
@@ -47,7 +47,6 @@ body{
 }
 
 .box:nth-child(3) {
-    /* background-color: blue; */
     height: 100%;
     position: relative;
     top: 0;
@@ -57,7 +56,6 @@ body{
 }
 
 .box:nth-child(4) {
-    /* background-color: aqua; */
     height: 100%;
     grid-row: 3/ span 1;
     grid-column: span 3;
@@ -65,7 +63,6 @@ body{
 }
 
 .box:nth-child(5) {
-    /* background-color: lightgreen; */
     height: 100%;
     grid-row: 4/span 1;
     grid-column: 2/span 3;
@@ -81,7 +78,6 @@ body{
 }
 
 .box:nth-child(7) {
-    /* background-color: silver; */
     background-color: inherit;
     height: 100%;
     grid-row: 2/span 5;
@@ -243,7 +239,6 @@ body{
 ::-webkit-scrollbar{
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -256,14 +251,12 @@ body{
 }
 
 ::-webkit-scrollbar:hover{
-    /* border-right: 5px solid inherit; */
     background-color: rgba(116, 121, 129, 0);
 }
 
 ::-webkit-scrollbar-track {
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;

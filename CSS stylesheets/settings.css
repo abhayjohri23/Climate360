@@ -180,15 +180,11 @@ body{
     margin-right: 2.5%;
 }
 
-#secIcon, #thirdIcon, #fifthIcon{
+.panelIcon{
     color:var(--icon-color-before);
 }
 
-#secIcon:hover, #thirdIcon:hover, #fourthIcon:hover, #fifthIcon:hover{
-    color:var(--icon-color-after);
-}
-
-#fourthIcon{
+.panelIcon:hover{
     color:var(--icon-color-after);
 }
 
