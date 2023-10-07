@@ -72,8 +72,6 @@ body{
     grid-column: 5/span 2;
 }
 
-
-/* Second Icon Styling inside the side menu panel */
 #secIcon{
     color:var(--icon-color-after);
 }
@@ -81,8 +79,6 @@ body{
 #secIcon:hover{
     color:var(--icon-color-after);
 }
-
-/* Third Icon Styling inside the side menu panel */
 
 #thirdIcon{
     color:var(--icon-color-before);
@@ -92,8 +88,6 @@ body{
     color:var(--icon-color-after);
 }
 
-/* Fourth Icon Styling inside the side menu panel */
-
 #fourthIcon{
     color:var(--icon-color-before);
 }
@@ -101,8 +95,6 @@ body{
 #fourthIcon:hover{
     color:var(--icon-color-after);
 }
-
-/* Fifth Icon Styling inside the side menu panel */
 
 #fifthIcon{
     color: var(--icon-color-before);
@@ -256,7 +248,6 @@ body{
     display: inline-block;
     width: 40%;
     height: 30%;
-    /* background-color: lightgray; */
     font-weight: 600;
 }
 

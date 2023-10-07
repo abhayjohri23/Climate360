@@ -7,6 +7,7 @@ body{
     height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
+    background-color: #0b131e;
 
 }
 .box {
@@ -62,6 +63,12 @@ body{
     height: 80%;
     grid-row: 3/span 1;
     grid-column: 5/span 2;
+}
+.box:nth-child(4) p{
+    color: var(--icon-color-before); 
+    font-size: 14px; 
+    margin-top: 14px; 
+    font-weight: 650
 }
 
 .scrollContainer {
@@ -164,50 +171,40 @@ body{
     text-align: center;
 }
 
+#themesChange{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5%;
+}
 
-/* Second Icon Styling inside the side menu panel */
-#secIcon{
+#secIcon, #thirdIcon, #fifthIcon{
     color:var(--icon-color-before);
 }
 
-#secIcon:hover{
+#secIcon:hover, #thirdIcon:hover, #fourthIcon:hover, #fifthIcon:hover{
     color:var(--icon-color-after);
 }
-
-/* Third Icon Styling inside the side menu panel */
-
-#thirdIcon{
-    color:var(--icon-color-before);
-}
-
-#thirdIcon:hover{
-    color:var(--icon-color-after);
-}
-
-/* Fourth Icon Styling inside the side menu panel */
 
 #fourthIcon{
     color:var(--icon-color-after);
 }
 
-#fourthIcon:hover{
-    color:var(--icon-color-after);
-}
-
-/* Fifth Icon Styling inside the side menu panel */
-
-#fifthIcon{
-    color: var(--icon-color-before);
-}
-
-#fifthIcon:hover{
-    color: var(--icon-color-after);
+#ttsFeature{
+    top: 1rem; 
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5%;
 }
 
 ::-webkit-scrollbar{
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -220,14 +217,12 @@ body{
 }
 
 ::-webkit-scrollbar:hover{
-    /* border-right: 5px solid inherit; */
     background-color: rgba(116, 121, 129, 0);
 }
 
 ::-webkit-scrollbar-track {
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;
