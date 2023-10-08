@@ -7,6 +7,7 @@ body{
     height: 100vh;
     font-family: 'Ubuntu', sans-serif;
     font-size: 13px;
+    background-color: #0b131e;
 
 }
 .box {
@@ -71,37 +72,11 @@ body{
     grid-row: 2/span 5;
     grid-column: 5/span 2;
 }
-
-#secIcon{
-    color:var(--icon-color-after);
-}
-
-#secIcon:hover{
-    color:var(--icon-color-after);
-}
-
-#thirdIcon{
+.panelIcon{
     color:var(--icon-color-before);
 }
-
-#thirdIcon:hover{
+.panelIcon:hover{
     color:var(--icon-color-after);
-}
-
-#fourthIcon{
-    color:var(--icon-color-before);
-}
-
-#fourthIcon:hover{
-    color:var(--icon-color-after);
-}
-
-#fifthIcon{
-    color: var(--icon-color-before);
-}
-
-#fifthIcon:hover{
-    color: var(--icon-color-after);
 }
 
 .menuPane {
@@ -324,7 +299,6 @@ body{
 ::-webkit-scrollbar{
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -336,15 +310,9 @@ body{
     background-color: rgba(116, 121, 129, 0.7);
 }
 
-::-webkit-scrollbar:hover{
-    /* border-right: 5px solid inherit; */
-    background-color: rgba(116, 121, 129, 0);
-}
-
 ::-webkit-scrollbar-track {
     border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
-    /* border:1px solid rgb(32, 43, 59); */
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;

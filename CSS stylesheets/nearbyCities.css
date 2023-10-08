@@ -18,6 +18,7 @@ body{
     display: inline-block;
     border-radius: 20px;
     background-color: #202B3B;
+    cursor: pointer;
 }
 
 #tile-container {
@@ -47,90 +48,48 @@ body{
 }
 
 .box:nth-child(3) {
-    height: 100%;
     position: relative;
     top: 0;
     grid-row: 2 / span 1;
     grid-column: 2/span 3;
-    cursor: pointer;
 }
 
 .box:nth-child(4) {
-    height: 100%;
     grid-row: 3/ span 1;
     grid-column: span 3;
-    cursor: pointer;
 }
 
 .box:nth-child(5) {
-    height: 100%;
     grid-row: 4/span 1;
     grid-column: 2/span 3;
-    cursor: pointer;
+
 }
 
 .box:nth-child(6) {
-    /* background-color: #ccc; */
-    height: 100%;
     grid-row: 5/span 1;
     grid-column: 2/span 3;
-    cursor: pointer;
 }
 
 .box:nth-child(7) {
     background-color: inherit;
-    height: 100%;
     grid-row: 2/span 5;
     grid-column: 5/span 2;
 }
 
-/* Second Icon Styling inside the side menu panel */
-#secIcon{
+.panelIcon{
     color:var(--icon-color-before);
 }
 
-#secIcon:hover{
+.panelIcon:hover{
     color:var(--icon-color-after);
 }
-
-/* Third Icon Styling inside the side menu panel */
-
-#thirdIcon{
-    color:var(--icon-color-after);
-}
-
-#thirdIcon:hover{
-    color:var(--icon-color-after);
-}
-
-/* Fourth Icon Styling inside the side menu panel */
-
-#fourthIcon{
-    color:var(--icon-color-before);
-}
-
-#fourthIcon:hover{
-    color:var(--icon-color-after);
-}
-
-/* Fifth Icon Styling inside the side menu panel */
-
-#fifthIcon{
-    color: var(--icon-color-before);
-}
-
-#fifthIcon:hover{
-    color: var(--icon-color-after);
-}
-
-
-.middlePane p{
-    outline:none !important;
-    border: none !important;
-}
-
 
 .menuPane {
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction: column; 
+    align-items: center;
+    
     padding: 30px 10px;
     height: 70vh;
     position: -webkit-sticky;
@@ -154,7 +113,15 @@ body{
     background-repeat: no-repeat;
     background-position: -45px -80px;
 }
-
+.middlePane p{
+    outline: none !important;
+    border: 0 !important;
+    color: var(--icon-color-before); 
+    margin-top: 15px; 
+    margin-left: 15px;
+    font-size: 12px;
+    font-weight: 650;
+}
 
 #dataPane{
     display: flex;
@@ -162,27 +129,27 @@ body{
     flex-wrap: nowrap;
 }
 
+.data{
+    font-family: 'Libre Baskerville', serif;
+    background-color: inherit;
+    text-justify:kashida;
+}
 
 .data:nth-child(1) {
-    font-family: 'Libre Baskerville', serif;
-    margin-top: 2px; margin-bottom: 0px;
-    background-color: inherit;
+    margin-top: 2px; 
+    margin-bottom: 0px;
     color: #F0F1F1;
     font-size: 30px;
     font-weight:650;
 }
 
 .data:nth-child(2) {
-    font-family: 'Libre Baskerville', serif;
     margin: 0px 1.5px 3px;
     color: #8c929c;
     font-size: 11px;
-    text-justify:kashida;
-    font-weight: 550;
 }
 
 .data:nth-child(3) {
-    font-family: 'Libre Baskerville', serif;
     color: #F0F1F1;
     margin-top: 40px;
     font-size: 40px;
@@ -196,21 +163,17 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0px;
-    padding-left: 0px;
     justify-content: space-evenly;
+    margin:0%;
+    padding-left: 0px;
 }
 
 #dailyForecast li{
     font-size: 12px;
     display: inline-block;
-    margin: 0%;
     text-align: center;
     width: calc(100%/3);
-    height: 100%;
-    border-right: 1px dashed gray;
+    border-right: 1px solid gray;
 }
 
 .divSpans {
