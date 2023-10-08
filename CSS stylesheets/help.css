@@ -30,7 +30,7 @@ body{
     display: grid;
     gap: 15px 20px;
     grid-template-columns: 5% repeat(5,1fr);
-    grid-template-rows: 5% 15% 15% 15% 15%;
+    grid-template-rows: 5% repeat(5,5%);
 }
 
 .box:nth-child(1){
@@ -58,7 +58,7 @@ body{
     color: var(--icon-color-before);
 
     padding-right: 2rem;
-    height: 50%;
+    /* height: 50%; */
     cursor: pointer;
 }
 
@@ -87,6 +87,9 @@ body{
     margin-left: 15px;
     font-size: 14px;
     font-weight: 650;
+    outline: none !important;
+    border: 0 !important;
+    transition: 0.5s;
 }
 
 .panelIcon{
@@ -118,6 +121,7 @@ body{
 }
 .drops{
     color: var(--icon-color-before);
+    transition: 1s;
 }
 .drops:hover{
     color: var(--icon-color-after);
