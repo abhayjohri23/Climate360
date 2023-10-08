@@ -132,11 +132,15 @@ body{
 }
 
 .mainImageIcon{
-    width: 30%;
-    height:100%;
-    background: url('../Icons and Images/weather-main-icons-sprite.png');
+    position: relative;
+    left: -1rem;
+    width: 20%;
+    height: 70%;
+    background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: -45px -80px;
+    background-position: 102% 0%;
+    transform: perspective(1.5rem) translateZ(10px);
+    filter: saturate(2.5) opacity(1.5);
 }
 
 #dailyForecast{
