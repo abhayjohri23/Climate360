@@ -133,13 +133,14 @@ body{
 
 .mainImageIcon{
     position: relative;
-    left: -1rem;
+    top: 0.5rem;
+    left: -1.5rem;
     width: 20%;
     height: 70%;
     background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
     background-position: 102% 0%;
-    transform: perspective(1.5rem) translateZ(10px);
+    transform: perspective(1.5rem) translateZ(0.5rem);
     filter: saturate(2.5) opacity(1.5);
 }
 
@@ -206,9 +207,9 @@ body{
 }
 
 .forecastBox:nth-child(1){
-    background: url('../Icons and Images/weather-main-icons-sprite.png');
+    background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: -45px -80px;
+    background-position: 52% 50%;
 }
 
 #airCondContainer {
@@ -246,16 +247,13 @@ body{
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content:space-between;
     border-bottom: 0.5px solid #737880;
     margin: 0.5rem;
     font-weight: 600;
 }
 
 .whichDay{
-    position: relative;
-    left: -4rem;
-    top: -0.6rem;
     color: #8c929c;
     font-size: 12px;
     font-weight: 550;
@@ -298,6 +296,15 @@ body{
 
 .daysFCitem:nth-child(5){
     border: 0;
+}
+
+div.fcIcon{
+    width: 25%;
+    height: 13vh;
+    background-image: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
+    background-repeat: no-repeat;
+    background-position: 0% 5%;
+    transform: perspective(2rem) translateZ(-1rem);
 }
 
 ::-webkit-scrollbar{
