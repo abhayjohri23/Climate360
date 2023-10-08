@@ -32,5 +32,10 @@ for(let sectn of sections){
         
         spanTag.style.transform = 'rotate(-90deg)';
         spanTag.style.color = 'var(--icon-color-after)';
+        
+        var contentTag = document.querySelector('#content');
+        contentTag.parentElement.style.backgroundColor='inherit';
+        contentTag.style.color='var(--icon-color-after)';
+        contentTag.innerHTML = '';
     });
 }
