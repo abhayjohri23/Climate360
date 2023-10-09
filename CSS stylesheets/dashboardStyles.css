@@ -222,8 +222,6 @@ body{
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    scroll-padding-top: 1rem;
-    scroll-padding-bottom: 1rem;
 }
 
 .airConditem {
@@ -288,7 +286,7 @@ body{
 
 .airCondHeader {
     color:#8c929c;
-    font-size: 16px;
+    font-size: 15px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
