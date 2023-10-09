@@ -1,0 +1,20 @@
+
+1. What is Climate360, and how does it work?
+
+Answer: Climate360 is a weather application that provides real-time weather information and forecasts for locations around the world. It works by utilizing data from trusted weather providers to deliver accurate and up-to-date weather reports.
+
+2. How accurate is the weather information provided by Climate360?
+
+Answer: Climate360 strives to offer highly accurate weather data sourced from reputable providers. However, please note that weather forecasts can change, so we recommend checking for updates regularly, especially for critical planning.
+
+3. Can I get weather alerts for severe conditions through Climate360?
+
+Answer: No, Climate360 does not currently offer weather alerts for severe conditions such as storms, hurricanes, and extreme temperatures.
+
+4. Does Climate360 support international locations, or is it limited to specific regions?
+
+Answer: Climate360 provides weather information for both local and international locations. You can search for and access weather data for virtually any city or region worldwide.
+
+5. How can I contact support if I encounter issues or have questions about Climate360?
+
+Answer: If you have any questions, concerns, or need assistance with Climate360, you can contact our support team via the "Contact Us" option within the app. We're here to help and ensure you have a seamless experience with our weather application.

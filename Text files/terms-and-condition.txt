@@ -1,0 +1,27 @@
+These Terms and Conditions govern your use of the Climate360 App provided by AJStudios. By using the Application, you agree to abide by these Terms. If you do not agree with these Terms, please refrain from using the Application.
+
+License: The Company grants you a limited, non-exclusive, and non-transferable license to use the Application for personal and non-commercial purposes.
+
+Acceptable Use: You agree not to use the Application for any unlawful or unauthorized purpose. You will comply with all applicable laws and regulations while using the Application.
+
+Weather Data
+
+Data Source: The weather data provided by the Application is sourced from third-party APIs. The Company does not guarantee the accuracy, completeness, or reliability of this data.
+
+Use of Data: You may use the weather data for personal, informational purposes only. Commercial or public use of the data is strictly prohibited without obtaining the necessary permissions from the data providers (Rapid API).
+
+Privacy Policy: The use of the Application may involve the collection and processing of personal information. Please refer to our Privacy Policy to understand how we handle your data.
+
+No Warranty: The Company makes no warranties or representations regarding the availability, accuracy, reliability, or suitability of the Application or the weather data provided. The Application is provided "as is" and "as available" without any warranty of any kind.
+
+No Liability: The Company shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, arising from your use of the Application.
+
+Termination: The Company reserves the right to terminate or suspend your access to the Application at any time without notice, for any reason, including, without limitation, breach of these Terms.
+
+Updates: The Company may update these Terms from time to time. You are responsible for regularly reviewing the Terms. Your continued use of the Application after any changes signifies your acceptance of those changes.
+
+
+Last Updated: 09-10-2023
+
+
+Powered by OpenAI.ChatGPT

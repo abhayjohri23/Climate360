@@ -34,8 +34,14 @@ for(let sectn of sections){
         spanTag.style.color = 'var(--icon-color-after)';
         
         var contentTag = document.querySelector('#content');
-        contentTag.parentElement.style.backgroundColor='inherit';
-        contentTag.style.color='var(--icon-color-after)';
-        contentTag.innerHTML = '';
+        var text = fetch('../Text files/terms-and-conditions.txt').then(response => response.data).catch(error=>console.log(error));
+        async function getResponse(text){
+            contentTag.innerHTML = text.then(resp => {
+                text.text();
+            });
+        }
+
+        getResponse(text);
+        
     });
 }
