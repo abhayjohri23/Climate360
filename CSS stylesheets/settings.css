@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap');
 
 
 body{
     margin: 0%;
     width: 100%;
     height: 100vh;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 13px;
+    font-family: 'Abhaya Libre',serif;
+    font-size: 14px;
     background-color: #0b131e;
 
 }
 .box {
     display: inline-block;
-    border-radius: 20px;
+    border-radius: 1.45rem;
     background-color: #202B3B;
 }
 
@@ -27,13 +27,12 @@ body{
 }
 
 .menuPane {
-    padding: 30px 10px;
+    padding: 2rem 0.7rem;
     height: 70vh;
-    position: -webkit-sticky;
     position: sticky;
-    top: 10px;
-    gap: 30px;
-    border-radius: 20px;
+    top: 0.71rem;
+    gap: 2rem;
+    border-radius: 1.5rem;
 }
 
 .box:nth-child(1){
@@ -50,6 +49,7 @@ body{
     padding-left: 15px; 
     outline: none; 
     font-size: 14px;
+    cursor: auto;
 }
 
 .box:nth-child(3){
@@ -66,7 +66,7 @@ body{
 }
 .box:nth-child(4) p{
     color: var(--icon-color-before); 
-    font-size: 14px; 
+    font-size: 15px; 
     margin-top: 14px; 
     font-weight: 650
 }

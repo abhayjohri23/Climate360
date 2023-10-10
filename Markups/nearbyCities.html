@@ -6,6 +6,9 @@
     <title>Climate360° | Dashboard</title>
     <link rel="stylesheet" href="../CSS stylesheets/nearbyCities.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap" rel="stylesheet">
     <style>
         :root{
             --icon-color-before: #737880;
@@ -25,45 +28,65 @@
             </section>
             <input class="box" placeholder="Search for cities">
             <section class="box middlePane">
-                <p>UTTAR PRADESH</p>
+                <div class="fcIcon"></div>
+                <div class="locationName">
+                    <p>UTTAR PRADESH</p>
+                    <span class="material-symbols-outlined">near_me</span>
+                </div>
+                <p>32°</p>
             </section>
             <section class="box middlePane">
-                <p>PUNJAB</p>
+                <div class="fcIcon"></div>
+                <div class="locationName">
+                    <p>PUNJAB</p>
+                    <span class="material-symbols-outlined">near_me</span>
+                </div>
+                <p>32°</p>
             </section>
             <section class="box middlePane">
-                <p>HARYANA</p> 
+                <div class="fcIcon"></div>
+                <div class="locationName">
+                    <p>HIMACHAL PRADESH</p>
+                    <span class="material-symbols-outlined">near_me</span>
+                </div>
+                <p>32°</p>
             </section>
             <section class="box middlePane">
-                <p>HIMACHAL PRADESH</p> 
+                <div class="fcIcon"></div>
+                <div class="locationName">
+                    <p>MADHYA PRADESH</p>
+                    <span class="material-symbols-outlined">near_me</span>
+                </div>
+                <p>32°</p>
             </section>
             <section class="box">
-                <div style="height: 30%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; border-bottom: 1px solid #737880;">
+                <div style="height: 27%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; border-bottom: 1px solid #737880;">
                     <div id="dataPane">
-                        <p id="cityName" class="data">Madrid<span id="countryName" style="font-size: 20px; font-style: normal; font-weight: 400;"> , Spain</span></p>
+                        <p id="cityName" class="data">Madrid<span id="countryName" style="font-size: 30px; font-style: normal; font-weight: 400;"> , Spain</span></p>
                         <p id="chanceOfRain" class="data">Chance of rain: 0%</p>
-                        <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: -6px; left: -5px;">C</sup></p>
+                        <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: 1px; left: -5px;">C</sup></p>
                     </div>
                     <div class="mainImageIcon"></div>
                 </div>
-                <div style="height: 30%; border-bottom: 1px solid #737880;">
-                    <p style="color: var(--icon-color-before); margin-top: 15px; margin-left: 15px; font-size: 12px; font-weight: 650;">TODAY'S FORECAST</p>
+                <div style="height: 27%; border-bottom: 1px solid #737880;">
+                    <p style="color: var(--icon-color-before); margin: 1rem 0rem 1rem 0.75rem; font-size: 15px; font-weight: 650;">TODAY'S FORECAST</p>
                     <ul id="dailyForecast">
                         <li>
-                            6:00 AM
+                            <span class="divSpans">6:00 AM</span>
                             <div class="foreCastcontainer">
                                 <div id="div0" class="forecastBox"></div>
                                 <span id="div0Span" class="divSpans">25°</span>
                             </div>
                         </li>
                         <li>
-                            9:00 AM
+                            <span class="divSpans">9:00 AM</span>
                             <div class="foreCastcontainer">
                                 <div id="div1" class="forecastBox"></div>
                                 <span id="div1Span" class="divSpans">25°</span>
                             </div>
                         </li>
                         <li style="border: 0;">
-                            12:00 PM
+                            <span class="divSpans">12:00 PM</span>
                             <div class="foreCastcontainer">
                                 <div id="div2" class="forecastBox"></div>
                                 <span id="div2Span" class="divSpans">25°</span>
@@ -71,25 +94,31 @@
                         </li>
                     </ul>
                 </div>
-                <div style="width: 40%;">
-                    <p style="color:var(--icon-color-before); margin-top: 30px;margin-left: 10px; font-weight: 650;">3-DAY FORECAST</p> 
+                <div style="width: 100%;">
+                    <p style="color:var(--icon-color-before); margin: 1rem 0rem 1rem 0.75rem;font-size:15px; font-weight: 650;">3-DAYS FORECAST</p> 
                     <div id="daysFCcontainer">
-                        <div id="module1" class="daysFCitem">
+                        <div class="daysFCitem">
                             <p class="whichDay">TODAY</p>
-                            <div class="fcIcon"></div>
-                            <p class="whatWeather">Sunny</p>
+                            <div class="midDiv">
+                                <div class="fcIcon"></div>
+                                <p class="whatWeather">Sunny</p>
+                            </div>
                             <p class="max_min">32/21</p>
                         </div>
-                        <div id="module2" class="daysFCitem">
-                            <p class="whichDay">MONDAY</p>
-                            <div class="fcIcon"></div>
-                            <p class="whatWeather">Sunny</p>
+                        <div class="daysFCitem">
+                            <p class="whichDay">TODAY</p>
+                            <div class="midDiv">
+                                <div class="fcIcon"></div>
+                                <p class="whatWeather">Sunny</p>
+                            </div>
                             <p class="max_min">32/21</p>
                         </div>
-                        <div id="module3" class="daysFCitem">
-                            <p class="whichDay">TUESDAY</p>
-                            <div class="fcIcon"></div>
-                            <p class="whatWeather">Sunny</p>
+                        <div class="daysFCitem">
+                            <p class="whichDay">TODAY</p>
+                            <div class="midDiv">
+                                <div class="fcIcon"></div>
+                                <p class="whatWeather">Sunny</p>
+                            </div>
                             <p class="max_min">32/21</p>
                         </div>
                     </div>

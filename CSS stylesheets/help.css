@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap');
 
 :root{
     --icon-color-before: #737880;
@@ -13,7 +13,7 @@ body{
     margin: 0%;
     width: 100%;
     height: 100vh;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Abhaya Libre',serif;;
     font-size: 13px;
     background-color: var(--background-color);
 }
@@ -56,6 +56,7 @@ body{
     border:none; 
     padding-left: 15px; 
     margin-top: 5px;
+    cursor: auto;
 }
 
 .cont {
@@ -116,13 +117,12 @@ body{
     border: none !important;
 }
 .menuPane {
-    padding: 30px 10px;
+    padding: 2rem 0.7rem;
     height: 70vh;
-    position: -webkit-sticky;
     position: sticky;
-    top: 10px;
-    gap: 30px;
-    border-radius: 20px;
+    top: 0.71rem;
+    gap: 2rem;
+    border-radius: 1.5rem;
 }
 
 .icon {

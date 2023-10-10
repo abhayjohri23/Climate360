@@ -1,15 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap');
+
 :root{
     --icon-color-before: #737880;
     --icon-color-after: #F0F1F1;
     --background-color: #0b131e;
+    --box-color:#202B3B;
+    --font-white:#e0e1e1;
+    --scroller-thumb-color:rgba(116, 121, 129, 0.7);
 }
 
 body{
     margin: 0%;
     width: 100%;
     height: 100vh;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Abhaya Libre',serif;
     font-size: 13px;
     background-color: var(--background-color);
 
@@ -45,6 +49,7 @@ body{
     padding-left: 15px; 
     outline: none; 
     font-size: 14px;
+    cursor: auto;
 }
 
 .box:nth-child(3) {
@@ -72,8 +77,10 @@ body{
 
 .box:nth-child(7) {
     background-color: inherit;
+    width: 100%;
     grid-row: 2/span 5;
     grid-column: 5/span 2;
+    cursor: auto;
 }
 
 .panelIcon{
@@ -90,13 +97,13 @@ body{
     flex-direction: column; 
     align-items: center;
     
-    padding: 30px 10px;
+    padding: 2rem 0.7rem;
     height: 70vh;
-    position: -webkit-sticky;
     position: sticky;
-    top: 10px;
-    gap: 30px;
-    border-radius: 20px;
+    top: 0.71rem;
+    gap: 2rem;
+    border-radius: 1.5rem;
+
 }
 
 .icon {
@@ -107,51 +114,92 @@ body{
 }
 
 .mainImageIcon{
-    width: 45%;
-    height: 80%;
-    background: url('../Icons and Images/weather-main-icons-sprite.png');
+    position: relative;
+    top: -0.5rem;
+    left: -2.5rem;
+    width: 29%;
+    height: 70%;
+    background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: -45px -80px;
+    background-position: 102% 0%;
+    transform: perspective(1.5rem) translateZ(0.5rem);
+    filter: saturate(2.5) opacity(1.5);
+}
+.middlePane{
+    display: grid;
+    grid-template-columns: repeat(5,20%);
 }
 .middlePane p{
     outline: none !important;
     border: 0 !important;
     color: var(--icon-color-before); 
-    margin-top: 15px; 
-    margin-left: 15px;
-    font-size: 12px;
-    font-weight: 650;
+    margin-top: 1.5rem;
+    margin-left: -0.75rem;
+    font-size: 18px;
+    font-weight: 600;
+    width: fit-content;
+    height: fit-content;
+    text-wrap: nowrap;
+}
+
+.middlePane p:last-child{
+    color: var(--font-white);
+    font-size: 20px;
+    font-family: 'Abhaya Libre',serif;
+    grid-column: 5;
+    text-align:right;
+    margin-top: 1.5rem;
+}
+.middlePane span {
+    border: 0 !important;
+    outline: none !important;
+    margin-top: 1.5rem;
+    margin-left: 0.25rem;
+    font-size: 1.25rem; color: var(--icon-color-before);
 }
 
 #dataPane{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.middlePane .locationName{
+    border: 0 !important;
+    outline:none !important;
+    display: flex; flex-direction: row;flex-wrap: nowrap;
 }
 
 .data{
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Abhaya Libre',serif;
     background-color: inherit;
     text-justify:kashida;
 }
 
 .data:nth-child(1) {
-    margin-top: 2px; 
-    margin-bottom: 0px;
+    font-family: 'Abhaya Libre',serif;
+    margin-top: 2px; margin-bottom: 0px;
+    background-color: inherit;
     color: #F0F1F1;
-    font-size: 30px;
-    font-weight:650;
+    font-size: 40px;
+    font-weight:550;
 }
 
 .data:nth-child(2) {
+    font-family: 'Abhaya Libre',serif;
     margin: 0px 1.5px 3px;
     color: #8c929c;
-    font-size: 11px;
+    font-size: 15px;
+    text-justify:kashida;
+    font-weight: 550;
 }
 
 .data:nth-child(3) {
+    font-family: 'Abhaya Libre',serif;
     color: #F0F1F1;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     font-size: 40px;
     font-weight: 550;
 }
@@ -178,29 +226,104 @@ body{
 
 .divSpans {
     color: whitesmoke;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 550;
 }
+
 
 .foreCastcontainer {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.forecastBox:nth-child(1){
+    background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
+    background-repeat: no-repeat;
+    background-position: 51% 50%;
+    transform: perspective(2rem) translateZ(-0.2rem);
 }
 
 .forecastBox {
-    background: url('../Icons and Images/weather-main-icons-sprite.png');
-    width: 10rem;
-    height: 6rem;
-    margin-bottom: 1rem;
+    margin: 10px;
+    width: 5rem;
+    height: 5rem;
+}
+
+#daysFCcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    row-gap: 0.1rem;
+
+}
+
+.daysFCitem {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    width: 90%;
+    height: 12vh;
+    border-bottom: 0.5px solid #737880;
+    display: grid;
+    column-gap: 0.5rem;
+    grid-template-columns:20% 55% 20%;
+}
+
+.whichDay{
+    grid-column: 1/span 1;
+    color: #8c929c;
+    font-size: 14px;
+    font-weight: 550;
+    padding-top: 12.5%;
+    padding-left: 25%;
+}
+.midDiv{
+    grid-column: 2/span 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+}
+.whatWeather{
+    color: #e0e1e1;
+    font-size: 13px;
+    font-weight: 580;
+    padding-top: 5%;
+}
+.midDiv div.fcIcon{
+    width: 50%;
+    height: 15vh;
+    background-image: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: -45px -80px;
+    background-position: 0% 97%;
+    transform: perspective(2rem) translateZ(-0.8rem);
+}
+.middlePane div.fcIcon{
+    width: 95%;
+    height: 15vh;
+    background-image: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
+    background-repeat: no-repeat;
+    background-position: 74% 10%;
+    transform: perspective(2rem) translateZ(-0.8rem);
+}
+.max_min{
+    grid-column: 3/span 1;
+    color: #8c929c;
+    font-size: 14px;
+    font-weight: 580;
+    padding-top: 12.5%;
+}
+
+.daysFCitem:last-child{
+    border: 0;
 }
 
 ::-webkit-scrollbar{
-    border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     height: 80vh;
@@ -213,12 +336,7 @@ body{
     background-color: rgba(116, 121, 129, 0.7);
 }
 
-::-webkit-scrollbar:hover{
-    background-color: rgba(116, 121, 129, 0);
-}
-
 ::-webkit-scrollbar-track {
-    border-right: 5px solid inherit;
     background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     border-radius: 100vw;
