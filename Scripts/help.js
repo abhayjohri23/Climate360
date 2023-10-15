@@ -1,5 +1,7 @@
 let dropBtns = document.querySelectorAll('.drops');
 let sections = document.querySelectorAll('.cont');
+let faqFileName = 'faqs.txt', ppFileName = 'privacy-policies.txt', tncFileName = 'terms-and-conditions',contactFileName = 'contactUs.txt';
+
 
 function resetAll(){
     for(let sectn of sections){
@@ -34,14 +36,27 @@ for(let sectn of sections){
         spanTag.style.color = 'var(--icon-color-after)';
         
         var contentTag = document.querySelector('#content');
-        var text = fetch('../Text files/terms-and-conditions.txt').then(response => response.data).catch(error=>console.log(error));
-        async function getResponse(text){
-            contentTag.innerHTML = text.then(resp => {
-                text.text();
-            });
-        }
+        let fileName;
+        
+        if(pTag.innerHTML == 'TERMS AND CONDITIONS')            fileName = tncFileName;
+        else if(pTag.innerHTML == 'PRIVACY POLICY')             fileName = ppFileName;
+        else if(pTag.innerHTML == 'CONTACT US')                 fileName = contactFileName;
+        else if(pTag.innerHTML == 'GENERAL FAQs')               fileName = faqFileName;
 
-        getResponse(text);
+        fetch(`../Text files/${fileName}`)
+        .then(response=>{
+            return response.text();
+        }).then(data=>{
+            console.log(data);
+        });
+        
+        // async function getResponse(text){
+        //     contentTag.innerHTML = text.then(resp => {
+        //         text.text();
+        //     });
+        // }
+
+        // getResponse(text);
         
     });
 }
