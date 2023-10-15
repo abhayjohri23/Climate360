@@ -1,6 +1,7 @@
 let dropBtns = document.querySelectorAll('.drops');
 let sections = document.querySelectorAll('.cont');
-let faqFileName = 'faqs.txt', ppFileName = 'privacy-policies.txt', tncFileName = 'terms-and-conditions',contactFileName = 'contactUs.txt';
+let contentArea = document.querySelector('#content');
+let faqFileName = 'faqs.txt', ppFileName = 'privacy-policies.txt', tncFileName = 'terms-and-conditions.txt',contactFileName = 'contactUs.txt';
 
 
 function resetAll(){
@@ -47,8 +48,9 @@ for(let sectn of sections){
         .then(response=>{
             return response.text();
         }).then(data=>{
-            console.log(data);
+            contentArea.innerHTML = data;
         });
+        
         
         // async function getResponse(text){
         //     contentTag.innerHTML = text.then(resp => {

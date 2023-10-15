@@ -141,6 +141,7 @@ body{
 #content{
     color: var(--font-white);
     font-weight: 500;    
+    animation-name: dataDisplay;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-direction: normal;
