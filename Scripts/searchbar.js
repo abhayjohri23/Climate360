@@ -122,6 +122,6 @@ function getNearbyPlaces(lat,lon){
         });
         return result;
     } catch (error) {
-        console.error(error);
+        alert(error);
     }
 }
