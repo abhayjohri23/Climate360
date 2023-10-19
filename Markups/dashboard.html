@@ -25,8 +25,11 @@
             <input class="box" placeholder="Search for cities" onkeydown="if(event.keyCode == 13) searchWeather('Dashboard');">
             <section class="box" style="display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between;">
                 <div id="dataPane">
-                    <p id="cityName" class="data">Madrid<span id="countryName" style="font-size: 30px; font-style: normal; font-weight: 500;"> , Spain</span></p>
-                    <p id="chanceOfRain" class="data">Chance of rain: 0%</p>
+                    <div style="display: flex;justify-content: flex-start; align-items: center;">
+                        <p id="cityName" class="data">Madrid</p>
+                        <sub id="countryName" class="data" style="bottom: 0; margin: 0.35rem 0rem 0rem 0rem; font-size: 30px; font-style: normal; font-weight: 500;"> , Spain</sub>
+                    </div>
+                    <p id="chanceOfRain" class="data" style="color: #8c929c;">Chance of rain: 0%</p>
                     <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: 0.01rem; left: -5px;">C</sup></p>
                 </div>
                 <div class="mainImageIcon"></div>
@@ -125,7 +128,7 @@
                             <p style="margin-top: 0.20rem;">VISIBILITY</p>
                         </div>
                         <div class="airCondValue">
-                            12 <span id="humidUnit" style="font-size: 1rem;"> km</span>
+                            12 <span id="visibilityUnit" style="font-size: 1rem;"> km</span>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -136,7 +139,7 @@
                             <p>DEW POINT</p>
                         </div>
                         <div class="airCondValue">
-                            60<span id="humidUnit" style="font-size: 1rem;">°</span>
+                            60<span id="dewUnit" style="font-size: 1rem;">°</span>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -147,7 +150,7 @@
                             <p>UV INDEX</p>
                         </div>
                         <div class="airCondValue">
-                            0 <span id="humidUnit" style="font-size: 1rem;"></span>
+                            0 <span id="uvUnit" style="font-size: 1rem;"></span>
                         </div>
                     </div>
                     <div class="airConditem">
