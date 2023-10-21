@@ -37,11 +37,51 @@ const dbCoords = {
     'Rain and snow (night)' : [0,49], 
     'Possible freezing rain (night)' : [102,0]   
 };
+
+const hfCoords = {
+    'Sunny' : [8,10],  
+    'Mostly sunny' : [8,10], 
+    'Partly sunny' : [29,88], 
+    'Mostly cloudy' : [29,88], 
+    'Cloudy' : [93,48], 
+    'Overcast' : [93,48], 
+    'Overcast with low clouds' : [93,48], 
+    'Fog': [29,48],
+    'Light rain' : [8,88],
+    'Rain': [72,10],
+    'Hail':[72,49],
+    'Possible rain' : [8,88],
+    'Rain shower' : [72,10],
+    'Thunderstorm' : [72,48],
+    'Local thunderstorms' : [8,88],
+    'Light snow' : [51,10], 
+    'Snow': [72,10],
+    'Possible snow' : [51,88], 
+    'Snow shower' : [93,10], 
+    'Rain and snow' : [93,10], 
+    'Possible rain and snow' : [51,88], 
+    'Rain and snow' : [93,10], 
+    'Freezing rain' : [93,10], 
+    'Possible freezing rain' : [51,10], 
+    'Clear (night)' : [51,48], 
+    'Clear' : [51,49], 
+    'Mostly clear (night)' : [51,48], 
+    'Partly clear (night)' : [29,10], 
+    'Mostly cloudy (night)' : [29,10], 
+    'Cloudy (night)' : [29,10], 
+    'Overcast with low clouds (night)' : [93,10], 
+    'Rain shower (night)' : [93,10], 
+    'Local thunderstorms (night)' : [8,48], 
+    'Snow shower (night)' : [8,48], 
+    'Rain and snow (night)' : [8,48], 
+    'Possible freezing rain (night)' : [93,10]   
+};
 function searchWeather(whichPage){
     const inputFieldText = document.querySelector('input.box').value;
     const objects = getPlaceDetails(inputFieldText);
 
     if(whichPage === 'Dashboard'){
+        //Current forecast filling in box:nth-child(3/4).
         objects.then(data => {
             return data[0];
         })
@@ -52,9 +92,18 @@ function searchWeather(whichPage){
             return fillDataPane(data[2],data[0],data[1]);
         });
 
+        //Hourly forecast filling up in box:nth-child(5)
+        objects.then(data => {
+            return data[0];
+        })
+        .then(placeData => {
+            return [placeData.name, placeData.country, getHourlyForecast(placeData.lat,placeData.lon,units)];
+        })
+        .then(data => {
+            return fillHourlyDataPane(data[2],data[0],data[1]);
+        });
 
-        let hourlyForecast = getHourlyForecast(lat,lon,units);
-        let dailyForecast = getDailyForecast(lat,lon,units);
+        // let dailyForecast = getDailyForecast(lat,lon,units);
         
         
 
@@ -187,18 +236,11 @@ function fillDataPane(currentForecast,name,country){
         let iconName = mainInfo.summary.toString();
         let points = dbCoords[iconName];
 
-        console.log("Main Data consoles");
-        console.log(iconName);
-        console.log(points);
-
         document.querySelector('.mainImageIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
 
         //Air conditions Population
         let airCondsOutput = airConditionBox.querySelectorAll('.airCondValue');
         let airCondsInput = [mainInfo.feels_like,mainInfo.wind.speed,mainInfo.humidity,mainInfo.visibility,mainInfo.dew_point,mainInfo.uv_index,mainInfo.wind_chill,mainInfo.cloud_cover];
-        
-        console.log("Airconditions");
-        console.log(airCondsInput);
 
         for(let i=0;i<airCondsInput.length;++i){
             airCondsOutput[i].innerHTML = airCondsInput[i].toFixed(1).toString();
@@ -207,4 +249,32 @@ function fillDataPane(currentForecast,name,country){
 
 
     return ;
+}
+
+function fillHourlyDataPane(hourlyForecast,name,country){
+    hourlyForecast.then(function(infoPart){
+        const mainInfo = infoPart.hourly.data;          //Returns an array of mainInfo for each hour
+        const hourlyModules = document.querySelectorAll('.hourlyModules');
+        
+        let i = 0; 
+        for(let module of hourlyModules){
+            let time = module.querySelector('.divSpans');
+            console.log(time);
+
+            let imageDiv = module.querySelector('.foreCastcontainer').querySelector('.forecastBox');
+            let tempDiv = module.querySelector('.foreCastcontainer').querySelector('.divSpans');
+
+            console.log(imageDiv);
+            console.log(tempDiv);
+            
+            time.innerHTML = mainInfo[i].date.substr(11,5);
+            tempDiv.innerHTML = `${mainInfo[i].feels_like}°`;
+            
+            let iconName = mainInfo[i].summary.toString();
+            let points = hfCoords[iconName];
+
+            imageDiv.style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+            i+=3;
+        }
+    });
 }
