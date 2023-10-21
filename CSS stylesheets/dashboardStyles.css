@@ -103,8 +103,21 @@ body{
     margin-top: 2%;
     margin-left: 1%;
 }
-
-
+.measurementValues{
+    color: var(--icon-color-after);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.units{
+    font-size: 18px; 
+    padding-top: 0.3rem; 
+    margin-left:1.5%
+}
+#countryName{
+    bottom: 0; margin: 0.35rem 0rem 0rem 0rem; font-size: 30px; font-style: normal; font-weight: 500;
+}
 .data:nth-child(1) {
     font-family: 'Abhaya Libre',serif;
     margin-top: 0.01rem; 
@@ -208,8 +221,9 @@ body{
 .forecastBox:nth-child(1){
     background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: 51% 50%;
-    transform: perspective(2rem) translateZ(-0.2rem);
+    background-position: 51% 49%;
+    transform: perspective(2rem) translateZ(-0.7rem);
+    margin-top: 0%;
 }
 
 #airCondContainer {

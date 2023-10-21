@@ -27,10 +27,10 @@
                 <div id="dataPane">
                     <div style="display: flex;justify-content: flex-start; align-items: center;">
                         <p id="cityName" class="data">Madrid</p>
-                        <sub id="countryName" class="data" style="bottom: 0; margin: 0.35rem 0rem 0rem 0rem; font-size: 30px; font-style: normal; font-weight: 500;"> , Spain</sub>
+                        <sub id="countryName" class="data"> , Spain</sub>
                     </div>
-                    <p id="chanceOfRain" class="data" style="color: #8c929c;">Chance of rain: 0%</p>
-                    <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: 0.01rem; left: -5px;">C</sup></p>
+                    <p id="chanceOfRain" class="data" style="color: #8c929c;">Mostly Cloudy</p>
+                    <p id="avgTemp" class="data">31°</p>
                 </div>
                 <div class="mainImageIcon"></div>
             </section>
@@ -94,8 +94,9 @@
                             </span>
                             <p style="margin-top: 2px;">FEELS LIKE</p>
                         </div>
-                        <div class="airCondValue">
-                            60<sup id="feelsUnit" style="font-size: 1rem;">°</sup>
+                        <div class="measurementValues">
+                            <div class="airCondValue">50°</div>
+                            <div class="units">C</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -105,8 +106,9 @@
                             </span>
                             <p style="margin-top: 0.25rem;">WIND SPEED</p>
                         </div>
-                        <div class="airCondValue">
-                            24 <span id="wsUnit" style="font-size: 1rem;">km/hr</span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">24</div>
+                            <div class="units">km/hr</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -116,8 +118,9 @@
                             </span>
                             <p style="margin-top: 0.25rem;">HUMIDITY</p>
                         </div>
-                        <div class="airCondValue">
-                            60 <span id="humidUnit" style="font-size: 1rem;"> %</span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">10</div>
+                            <div class="units">%</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -127,8 +130,9 @@
                             </span>
                             <p style="margin-top: 0.20rem;">VISIBILITY</p>
                         </div>
-                        <div class="airCondValue">
-                            12 <span id="visibilityUnit" style="font-size: 1rem;"> km</span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">10</div>
+                            <div class="units">miles</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -138,8 +142,9 @@
                             </span>
                             <p>DEW POINT</p>
                         </div>
-                        <div class="airCondValue">
-                            60<span id="dewUnit" style="font-size: 1rem;">°</span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">15°</div>
+                            <div class="units">C</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -149,8 +154,9 @@
                             </span>
                             <p>UV INDEX</p>
                         </div>
-                        <div class="airCondValue">
-                            0 <span id="uvUnit" style="font-size: 1rem;"></span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">0</div>
+                            <div class="units">%</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -160,8 +166,9 @@
                             </span>
                             <p>WIND CHILLS</p>
                         </div>
-                        <div class="airCondValue">
-                            47 <span id="humidUnit" style="font-size: 1rem;"></span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">47°</div>
+                            <div class="units">C</div>
                         </div>
                     </div>
                     <div class="airConditem">
@@ -171,14 +178,15 @@
                             </span>
                             <p>CLOUD COVER</p>
                         </div>
-                        <div class="airCondValue">
-                            47 <span id="humidUnit" style="font-size: 1rem;"></span>
+                        <div class="measurementValues">
+                            <div class="airCondValue">47</div>
+                            <div class="units">%</div>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="box">
-                    <p style="color:var(--icon-color-before); margin-top: 30px;margin-left: 10px;font-size:16px; font-weight: 650;">5-DAY FORECAST</p> 
+                    <p style="color:var(--icon-color-before); margin-top: 30px;margin-left: 10px;font-size:16px; font-weight: 650;">6-DAY FORECAST</p> 
                     <div id="daysFCcontainer">
                         <div class="daysFCitem">
                             <p class="whichDay">TODAY</p>
