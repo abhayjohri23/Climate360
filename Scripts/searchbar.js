@@ -130,14 +130,16 @@ const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satur
 const ukUnits = ['°C','m/s','%','km','°C','%','°C','%'];
 const usaUnits = ['°F','mph','%','miles','°F','%','°F','%'];
 
-function searchWeather(whichPage){
-    document.querySelector('#seeMoreBtn').style.visibility='visible';
-    document.querySelector('.airConditions').style.overflowY='hidden';
+let placesArr;
 
+function searchWeather(whichPage){
     const inputFieldText = document.querySelector('input.box').value;
     const objects = getPlaceDetails(inputFieldText);
 
     if(whichPage === 'Dashboard'){
+        document.querySelector('#seeMoreBtn').style.visibility='visible';
+        document.querySelector('.airConditions').style.overflowY='hidden';
+        
         //Current forecast filling in box:nth-child(3/4).
         objects.then(data => {
             return data[0];
@@ -167,8 +169,44 @@ function searchWeather(whichPage){
 
     }
     else if(whichPage === 'Cities'){
-        let cityArr = getNearbyPlaces(lat,lon);
-        let currentForecast;
+        let midTiles = document.querySelectorAll('.middlePane');
+
+        objects.then(placeData => {
+            return [getNearbyPlaces(placeData[0].lat,placeData[0].lon), placeData[0].lat, placeData[0].lon,placeData[0].name];
+        }).then(info => {
+            placesArr = [];
+
+            info[0].then(input => {
+                let arr = input.data;            //It is an array with objects stored.
+                for(let x of arr){
+                    placesArr.push([x.latitude,x.longitude,x.name]);
+                }
+            })
+            .then(function(){
+                //Getting data for all places according to the length of the middle pane modules with the existing API function
+                const myData = placesArr.map((_element, i)=>{
+                    return getCurrentForecast(placesArr[i][0],placesArr[i][1],units).then(mainInfo => mainInfo.current);
+                })
+                
+                Promise.all(myData)
+                .then(currentData => {
+                    for(let i=0;i<midTiles.length;++i){
+                        midTiles[i].querySelector('.location').innerHTML = placesArr[i][2].formulate();
+                        midTiles[i].querySelector('.locTemp').innerHTML = `${currentData[i].temperature.toFixed(0)}° ${units==='us'?'F':'C'}`;
+                        
+                        let iconName = currentData[i].summary.toString();
+                        let points = dailyCoords[iconName];
+
+                        midTiles[i].querySelector('.fcIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+                    }
+                })
+                .catch(error => {
+                    alert(error);
+                });
+
+            });
+        });
+        
     }
     else{
         return ;
@@ -257,12 +295,18 @@ function getCurrentForecast(lat,lon,units){
 }
 
 function getNearbyPlaces(lat,lon){
-    let queryParam = ((lat<0) ? lat.toString() : ('+'+lat.toString())) + ((lon<0) ? lon.toString() : ('+'+lon.toString()));
-    const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${queryParam}/nearbyCities?radius=100`;
+    lat = lat.substr(0,lat.length-1);
+    if(parseFloat(lat,10) > 0)                  lat = '+' + lat;
+
+    lon = lon.substr(0,lon.length-1);
+    if(parseFloat(lon,10) > 0)                  lon = '+' + lon;
+
+    let param = lat + lon;
+    const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/locations/${param}/nearbyCities?radius=100`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '2e0b7c2f57mshbaf13e7cc92be15p16369bjsnc34a01c4c15a',
+            'X-RapidAPI-Key': '75c0bdbadamshcac043a0763c7c1p144fd0jsn7b1f28fe6afc',
             'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
         }
     };
