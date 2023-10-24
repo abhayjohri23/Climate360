@@ -130,7 +130,7 @@ const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satur
 const ukUnits = ['°C','m/s','%','km','°C','%','°C','%'];
 const usaUnits = ['°F','mph','%','miles','°F','%','°F','%'];
 
-let placesArr;
+let placesArr, currentForecastData , dailyForecastData , hourlyForecastData;
 
 function searchWeather(whichPage){
     const inputFieldText = document.querySelector('input.box').value;
@@ -172,14 +172,14 @@ function searchWeather(whichPage){
         let midTiles = document.querySelectorAll('.middlePane');
 
         objects.then(placeData => {
-            return [getNearbyPlaces(placeData[0].lat,placeData[0].lon), placeData[0].lat, placeData[0].lon,placeData[0].name];
+            return [getNearbyPlaces(placeData[0].lat,placeData[0].lon)];
         }).then(info => {
             placesArr = [];
 
             info[0].then(input => {
                 let arr = input.data;            //It is an array with objects stored.
                 for(let x of arr){
-                    placesArr.push([x.latitude,x.longitude,x.name]);
+                    placesArr.push([x.latitude,x.longitude,x.name,x.country]);
                 }
             })
             .then(function(){
@@ -190,6 +190,7 @@ function searchWeather(whichPage){
                 
                 Promise.all(myData)
                 .then(currentData => {
+                    currentForecastData = currentData;          //storing the data once and for all.
                     for(let i=0;i<midTiles.length;++i){
                         midTiles[i].querySelector('.location').innerHTML = placesArr[i][2].formulate();
                         midTiles[i].querySelector('.locTemp').innerHTML = `${currentData[i].temperature.toFixed(0)}° ${units==='us'?'F':'C'}`;
@@ -199,6 +200,41 @@ function searchWeather(whichPage){
 
                         midTiles[i].querySelector('.fcIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
                     }
+
+                    return currentData;
+                })
+                .then(currentData => {
+                    //Data Panel filling:
+                    let dataPane = document.querySelector('#dataPane');
+                    let iconName = currentData[0].summary.toString();
+                    let points = dbCoords[iconName];
+
+                    dataPane.querySelector('#cityName').innerHTML = placesArr[0][2];
+                    dataPane.querySelector('#chanceOfRain').innerHTML = currentData[0].summary.replaceAll('_',' ').formulate();
+                    dataPane.querySelector('#avgTemp').innerHTML = `${currentData[0].temperature.toFixed(0).toString()}°`;
+                    
+                    document.querySelector('.mainImageIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+
+                    //Hourly data filling:
+                    const tempData = placesArr.map((_element, i)=>{
+                        return getHourlyForecast(placesArr[i][0],placesArr[i][1],units).then(mainInfo => mainInfo);
+                    })
+                    
+                    Promise.all(tempData)
+                    .then(hourlyData => {
+                        hourlyForecastData = hourlyData;          //storing the data once and for all.
+                        fillHourlyDataPane(hourlyData[0]);
+                    });
+
+                    const dailyTempArray = placesArr.map((_element,i) => {
+                        return getDailyForecast(placesArr[i][0],placesArr[i][1],units).then(dailyForecast => dailyForecast);
+                    })
+
+                    Promise.all(dailyTempArray)
+                    .then(dailyData => {
+                        dailyForecastData = dailyData;
+                        fillDailyDataPane(dailyData[0]);
+                    });
                 })
                 .catch(error => {
                     alert(error);
@@ -219,7 +255,7 @@ function getPlaceDetails(placeName){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '75c0bdbadamshcac043a0763c7c1p144fd0jsn7b1f28fe6afc',
+            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -239,7 +275,7 @@ function getDailyForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '75c0bdbadamshcac043a0763c7c1p144fd0jsn7b1f28fe6afc',
+            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -259,7 +295,7 @@ function getHourlyForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '75c0bdbadamshcac043a0763c7c1p144fd0jsn7b1f28fe6afc',
+            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -279,7 +315,7 @@ function getCurrentForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '75c0bdbadamshcac043a0763c7c1p144fd0jsn7b1f28fe6afc',
+            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -322,7 +358,6 @@ function getNearbyPlaces(lat,lon){
 }
 
 function fillDataPane(currentForecast,name,country){
-    console.log(currentForecast);
     currentForecast.then(data => {
         let mainInfo = data.current;
         let dataPane = document.querySelector('#dataPane');

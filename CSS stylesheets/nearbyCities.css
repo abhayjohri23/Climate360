@@ -120,13 +120,13 @@ body{
 
 .mainImageIcon{
     position: relative;
-    top: -0.5rem;
-    left: -2.5rem;
-    width: 29%;
-    height: 70%;
+    top: 1rem;
+    left: -2rem;
+    width: 30%;
+    height: 50%;
     background: url('../Icons and Images/3d-weather-forecast-small-removebg.png');
     background-repeat: no-repeat;
-    background-position: 102% 0%;
+    background-position: 100% 5%;
     transform: perspective(1.5rem) translateZ(0.5rem);
     filter: saturate(2.5) opacity(1.5);
 }

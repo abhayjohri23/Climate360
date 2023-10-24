@@ -62,30 +62,32 @@
             <section class="box sidePane">
                 <div style="height: 27%; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; border-bottom: 1px solid #737880;">
                     <div id="dataPane">
-                        <p id="cityName" class="data">Madrid<span id="countryName" style="font-size: 30px; font-style: normal; font-weight: 400;"> , Spain</span></p>
-                        <p id="chanceOfRain" class="data">Chance of rain: 0%</p>
-                        <p id="avgTemp" class="data">31° <sup id="mainTempUnit" style="font-size: 15px; position: relative; top: 1px; left: -5px;">C</sup></p>
+                        <div style="display: flex;justify-content: flex-start; align-items: center;">
+                            <p id="cityName" class="data">Madrid</p>
+                        </div>
+                        <p id="chanceOfRain" class="data" style="color: #8c929c;">Mostly Cloudy</p>
+                        <p id="avgTemp" class="data">31°</p>
                     </div>
                     <div class="mainImageIcon"></div>
                 </div>
                 <div style="height: 27%; border-bottom: 1px solid #737880;">
                     <p style="color: var(--icon-color-before); margin: 1rem 0rem 1rem 0.75rem; font-size: 15px; font-weight: 650;">TODAY'S FORECAST</p>
                     <ul id="dailyForecast">
-                        <li>
+                        <li class="hourlyModules">
                             <span class="divSpans">6:00 AM</span>
                             <div class="foreCastcontainer">
                                 <div id="div0" class="forecastBox"></div>
                                 <span id="div0Span" class="divSpans">25°</span>
                             </div>
                         </li>
-                        <li>
+                        <li class="hourlyModules">
                             <span class="divSpans">9:00 AM</span>
                             <div class="foreCastcontainer">
                                 <div id="div1" class="forecastBox"></div>
                                 <span id="div1Span" class="divSpans">25°</span>
                             </div>
                         </li>
-                        <li style="border: 0;">
+                        <li class="hourlyModules" style="border: 0;">
                             <span class="divSpans">12:00 PM</span>
                             <div class="foreCastcontainer">
                                 <div id="div2" class="forecastBox"></div>

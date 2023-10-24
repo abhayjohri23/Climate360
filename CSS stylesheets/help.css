@@ -24,14 +24,6 @@ body{
     font-size: 14px;
 }
 
-@keyframes dataDisplay{
-    0% {background-color: inherit;}
-    25% {background-color: rgb(240, 241, 241, 0.1);}
-    50% {background-color: rgb(240, 241, 241, 0.5);}
-    75% {background-color: rgb(240, 241, 241, 0.7);}
-    100% {background-color: rgb(240, 241, 241, 0.2);}
-}
-
 #tile-container {
     margin: 10px 15px;
     width: 98%;
@@ -139,12 +131,9 @@ body{
     color: var(--icon-color-after);
 }
 #content{
+    font-size: 16px;
     color: var(--font-white);
-    font-weight: 400;    
-    animation-name: dataDisplay;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-    animation-direction:normal;
+    font-weight: 400;   
 }
 
 ::-webkit-scrollbar{
