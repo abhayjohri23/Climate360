@@ -1,78 +1,27 @@
 This Privacy Policy ("Policy") explains how Climate360 ("the Company") collects, uses, and safeguards your personal information when you use the Weather Application ("the Application"). By using the Application, you consent to the practices described in this Policy.
 <br>
-<br>
-
+<ul>
 Information We Collect
+<li>Location Data: We may collect and process information about your geographical location, which helps us provide you with localized weather data and services. You can choose to disable location services in your device settings.</li>
 <br>
-
-Personal Information: We may collect personal information such as your name, email address, and location when you use the Application. This information is used to provide you with weather-related services and enhance your user experience.
+Use of Your Information
 <br>
+<li>Weather Services: We use the information collected to provide you with weather-related services, including current weather conditions, forecasts, and weather alerts.</li>
 <br>
-
-Location Data: We may collect and process information about your geographical location, which helps us provide you with localized weather data and services. You can choose to disable location services in your device settings.
+<li>Third-Party Services: The Application may use third-party services and APIs to provide weather data. These third parties have their privacy policies and may collect and use data as described in their policies.</li>
 <br>
-<br>
-
-2. Use of Your Information
-<br>
-Weather Services: We use the information collected to provide you with weather-related services, including current weather conditions, forecasts, and weather alerts.
-<br>
-<br>
-
-Communication: We may use your email address to send you weather updates, alerts, or other information related to the Application. You can opt out of receiving such communications at any time.
-<br>
-<br>
-
-Improvement: We may use aggregated and anonymized data to improve the Application's functionality, user interface, and user experience.
-<br>
-<br>
-
-Data Sharing
-<br>
-Third-Party Services: The Application may use third-party services and APIs to provide weather data. These third parties have their privacy policies and may collect and use data as described in their policies.
-
-<br>
-<br>
-Legal Requirements: We may disclose your personal information if required by law or in response to valid requests by public authorities.
-
-<br>
+<li>Legal Requirements: We may disclose your personal information if required by law or in response to valid requests by public authorities.</li>
 <br>
 Data Security
 <br>
-Security Measures: We employ industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.
-
-<br>
+<li>Security Measures: We employ industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.</li>
 <br>
 Your Choices
 <br>
-<br>
-Access and Correction: You have the right to access and correct your personal information. You can update your information within the Application or by contacting us.
-
-<br>
-<br>
-Opt-Out: You can opt out of receiving marketing communications from us by following the unsubscribe instructions provided in those communications.
-
-<br>
-<br>
-Children's Privacy
-<br>
-Children's Information: The Application is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us to have it removed.
-
-<br>
-<br>
-Changes to this Policy
-<br>
-Updates: We may update this Privacy Policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new Policy on this page.
-
-<br>
+<li>Access and Correction: You have the right to access and correct your personal information. You can update your information within the Application or by contacting us.</li>
 <br>
 By using the Application, you consent to the collection and use of your personal information as described in this Privacy Policy.
-
-<br>
 <br>
 Last Updated: 09-10-2023
-
-
-<br>
 <br>
 Powered by OpenAI.ChatGPT
