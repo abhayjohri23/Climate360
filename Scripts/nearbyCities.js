@@ -15,5 +15,25 @@ for(let module of btnGroups){
         event.target.style.border = '1px solid #092944';
         event.target.style.outline = '1px solid #0461A5';
         event.target.querySelector('.nearMeIcon').style.visibility = 'visible';
+        
+        const placeName = event.target.querySelector('.location').innerHTML;
+        console.log(placeName);
+        for(let i=0;i<placesArr.length;++i){
+            if(placesArr[i][2].toLowerCase() === placeName.toLowerCase()){
+                let dataPane = document.querySelector('#dataPane');
+                let iconName = currentForecastData[i].summary.toString();
+                let points = dbCoords[iconName];
+
+                dataPane.querySelector('#cityName').innerHTML = placesArr[i][2];
+                dataPane.querySelector('#chanceOfRain').innerHTML = currentForecastData[i].summary.replaceAll('_',' ').formulate();
+                dataPane.querySelector('#avgTemp').innerHTML = `${currentForecastData[i].temperature.toFixed(0).toString()}°`;
+                
+                document.querySelector('.mainImageIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+
+                fillHourlyDataPane(hourlyForecastData[i]);
+                fillDailyDataPane(dailyForecastData[i]);
+                break;
+            }
+        }
     });
 }

@@ -255,7 +255,7 @@ function getPlaceDetails(placeName){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
+            'X-RapidAPI-Key': '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -275,7 +275,7 @@ function getDailyForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
+            'X-RapidAPI-Key': '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -295,7 +295,7 @@ function getHourlyForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
+            'X-RapidAPI-Key': '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -315,7 +315,7 @@ function getCurrentForecast(lat,lon,units){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f63011dc47msh3a71beb6a3e6143p16f1e4jsn5e619a896306',
+            'X-RapidAPI-Key': '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed',
             'X-RapidAPI-Host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
