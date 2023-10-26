@@ -3,3 +3,5 @@ seeMoreBtn.addEventListener("click",event => {
     event.target.style.visibility = 'hidden';
     document.querySelector('.airConditions').style.overflow = 'auto';
 });
+
+initialLoad('dashboard');

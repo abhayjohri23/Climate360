@@ -1,4 +1,47 @@
-let units = 'us';
+const urlParams = new URLSearchParams(window.location.search);
+const units = urlParams.get('units');
+const theme = urlParams.get('theme');
+let defaultLatitude = '28.60455082622834', defaultLongitude = '77.02978712321303';
+
+if("geolocation" in navigator){
+    navigator.geolocation.getCurrentPosition(
+        function (position){
+            defaultLatitude = position.coords.latitude;
+            defaultLongitude = position.coords.longitude;
+        },
+        function (error) {
+            switch (error.code) {
+                case PositionError.PERMISSION_DENIED:{
+                    // Handle permission denied error
+                    alert('Please allow us to read your GPS Location, for better User experience.');
+                    break;
+                }
+                case PositionError.POSITION_UNAVAILABLE:{
+                    // Handle position unavailable error
+                    alert('Position is not available. Page might load with default Lat/Long fields!');
+                    break;
+                }
+                case PositionError.TIMEOUT:{
+                    // Handle timeout error
+                    alert('Error 408: Session Timeout.');
+                    break;
+                }
+                default:{
+                    // Handle other or unknown errors
+                    alert('Cannot access the User Location. Please reload the page.');
+                    console.log(`Reported error: ${error}`);
+                }
+            }
+            
+        }
+    );
+}
+else{
+    alert('Could not load the page for User Location. It is advised to open the website in latest version of Google Chrome or Edge.');
+}
+
+
+
 String.prototype.formulate = function(){
     return this.substring(0,1).toUpperCase() + this.substring(1).toLowerCase();
 }
@@ -366,7 +409,7 @@ function fillDataPane(currentForecast,name,country){
         let points = dbCoords[iconName];
     
         //Main Data Pane population 
-        dataPane.querySelector('#cityName').innerHTML = name;
+        dataPane.querySelector('#cityName').innerHTML = (name != undefined) ? name : '';
         dataPane.querySelector('#countryName').innerHTML = ` , ${country}`;
 
         dataPane.querySelector('#chanceOfRain').innerHTML = mainInfo.summary.replaceAll('_',' ').formulate();
@@ -437,4 +480,135 @@ function fillDailyDataPane(dailyForecast){
     }
 
     return ;
+}
+
+function reverseGeoCode(lat,lon){
+    const url = `https://forward-reverse-geocoding.p.rapidapi.com/v1/reverse?lat=${lat}&lon=${lon}&accept-language=en&polygon_threshold=0.0`;
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed',
+            'X-RapidAPI-Host': 'forward-reverse-geocoding.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const result = fetch(url, options).then(response => {
+            return response.json();
+        });
+        return result;
+    } catch (error) {
+        alert(error);
+    }
+}
+
+function initialLoad(whichPage){
+    if(whichPage === 'dashboard'){
+        console.log("Called from Dashboard!");
+        document.querySelector('#seeMoreBtn').style.visibility='visible';
+        document.querySelector('.airConditions').style.overflowY='hidden';
+        const objects = reverseGeoCode(defaultLatitude,defaultLongitude);
+
+        //Current forecast filling in box:nth-child(3/4).
+        objects.then(data => {
+            return data.address;
+        })
+        .then(address => {
+            return [address.city, address.country, getCurrentForecast(defaultLatitude,defaultLongitude,units)];
+        })
+        .then(data => {
+            return fillDataPane(data[2],data[0],data[1]);
+        });
+
+        //Hourly forecast filling up in box:nth-child(5)
+        getHourlyForecast(defaultLatitude,defaultLongitude,units)
+        .then(data => {
+            return fillHourlyDataPane(data);
+        });
+
+        //Daily Forecast filling in the box:nth-child(6)
+        getDailyForecast(defaultLatitude,defaultLongitude,units)
+        .then(data => {
+            return fillDailyDataPane(data);
+        });
+    }
+    else if(whichPage === 'Cities'){
+        console.log("Called from Nearby Cities!");
+
+        let midTiles = document.querySelectorAll('.middlePane');
+
+        new Promise(function(resolve){
+            resolve([getNearbyPlaces(defaultLatitude,defaultLongitude)]);
+        })
+        .then(info => {
+            placesArr = [];
+
+            info[0].then(input => {
+                let arr = input.data;            //It is an array with objects stored.
+                for(let x of arr){
+                    placesArr.push([x.latitude,x.longitude,x.name,x.country]);
+                }
+            })
+            .then(function(){
+                //Getting data for all places according to the length of the middle pane modules with the existing API function
+                const myData = placesArr.map((_element, i)=>{
+                    return getCurrentForecast(placesArr[i][0],placesArr[i][1],units).then(mainInfo => mainInfo.current);
+                })
+                
+                Promise.all(myData)
+                .then(currentData => {
+                    currentForecastData = currentData;          //storing the data once and for all.
+                    for(let i=0;i<midTiles.length;++i){
+                        midTiles[i].querySelector('.location').innerHTML = placesArr[i][2].formulate();
+                        midTiles[i].querySelector('.locTemp').innerHTML = `${currentData[i].temperature.toFixed(0)}° ${units==='us'?'F':'C'}`;
+                        
+                        let iconName = currentData[i].summary.toString();
+                        let points = dailyCoords[iconName];
+
+                        midTiles[i].querySelector('.fcIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+                    }
+
+                    return currentData;
+                })
+                .then(currentData => {
+                    //Data Panel filling:
+                    let dataPane = document.querySelector('#dataPane');
+                    let iconName = currentData[0].summary.toString();
+                    let points = dbCoords[iconName];
+
+                    dataPane.querySelector('#cityName').innerHTML = placesArr[0][2];
+                    dataPane.querySelector('#chanceOfRain').innerHTML = currentData[0].summary.replaceAll('_',' ').formulate();
+                    dataPane.querySelector('#avgTemp').innerHTML = `${currentData[0].temperature.toFixed(0).toString()}°`;
+                    
+                    document.querySelector('.mainImageIcon').style.backgroundPosition = `${points[0]}% ${points[1]}%`;
+
+                    //Hourly data filling:
+                    const tempData = placesArr.map((_element, i)=>{
+                        return getHourlyForecast(placesArr[i][0],placesArr[i][1],units).then(mainInfo => mainInfo);
+                    })
+                    
+                    Promise.all(tempData)
+                    .then(hourlyData => {
+                        hourlyForecastData = hourlyData;          //storing the data once and for all.
+                        fillHourlyDataPane(hourlyData[0]);
+                    });
+
+                    const dailyTempArray = placesArr.map((_element,i) => {
+                        return getDailyForecast(placesArr[i][0],placesArr[i][1],units).then(dailyForecast => dailyForecast);
+                    })
+
+                    Promise.all(dailyTempArray)
+                    .then(dailyData => {
+                        dailyForecastData = dailyData;
+                        fillDailyDataPane(dailyData[0]);
+                    });
+                })
+                .catch(error => {
+                    alert(error);
+                });
+
+            });
+        });
+        
+    }
 }

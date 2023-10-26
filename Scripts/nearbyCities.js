@@ -37,3 +37,5 @@ for(let module of btnGroups){
         }
     });
 }
+
+initialLoad('Cities');
