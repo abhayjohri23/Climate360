@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap');
 
+:root{
+    --icon-color-before: #737880;
+    --icon-color-after: #F0F1F1;
+    --background-color: #0b131e;
+    --heading-color: #8c929c;
+    --box-color:#202B3B;
+    --font-color:#e0e1e1;
+    --scroller-thumb-color:#747981b3;
+    --whichDay-color:#a2a8af;
+    --scrollBar-container-color: #202B3B;
+    --toggleThumb-color: #2f4a7d4d;
+    --switch-color:#2c74da;
+    --switch-bg-color:#ccc;
+}
 
 body{
     margin: 0%;
@@ -7,13 +21,13 @@ body{
     height: 100vh;
     font-family: 'Abhaya Libre',serif;
     font-size: 14px;
-    background-color: #0b131e;
+    background-color: var(--background-color);
 
 }
 .box {
     display: inline-block;
     border-radius: 1.45rem;
-    background-color: #202B3B;
+    background-color: var(--box-color);
 }
 
 #tile-container {
@@ -42,7 +56,7 @@ body{
 
 .box:nth-child(2){
     grid-column: span 3;
-    color: #e0e1e1; 
+    color: var(--font-color); 
     font-weight: 400; 
     height:32px; 
     border:none; 
@@ -74,13 +88,13 @@ body{
 .scrollContainer {
     font-size: 14px;
     font-weight: 600;
-    color: #9399A2;
+    color: var(--heading-color);
     padding: 15px;
     display: block;
     width: 96.5%;
     height: 80%;
     border-radius: 20px;
-    background-color: #202B3B;
+    background-color: var(--box-color);
 }
 
 .box:nth-child(5) {
@@ -99,7 +113,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    background-color: #0B131E;
+    background-color: var(--background-color);
     width: 100%;
     height: 1rem;
     padding: 0.2rem;
@@ -117,7 +131,7 @@ body{
 
 .optnStyle{
     font-size: 13px;
-    color: #9399A2;
+    color: var(--icon-color-before);
     font-weight: 500;
 }
 
@@ -126,7 +140,7 @@ body{
     position: absolute;
     top: 10%;
     left: 0.4%;
-    background-color: rgba(47, 74, 125,0.3);
+    background-color: var(--toggleThumb-color);
     width: 50%;
     height: 85%;
     border-radius: 0.7rem;
@@ -140,7 +154,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     position: relative;
-    background-color: #ccc;
+    background-color: var(--switch-bg-color);
     width: 2.12rem;
     height: 1.12rem;
     padding: 0;
@@ -152,7 +166,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #2c74da;
+    background-color: var(--switch-color);
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -200,7 +214,6 @@ body{
 
 ::-webkit-scrollbar{
     border-right: 5px solid inherit;
-    background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -212,13 +225,8 @@ body{
     background-color: rgba(116, 121, 129, 0.7);
 }
 
-::-webkit-scrollbar:hover{
-    background-color: rgba(116, 121, 129, 0);
-}
-
 ::-webkit-scrollbar-track {
     border-right: 5px solid inherit;
-    background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;

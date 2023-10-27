@@ -190,10 +190,18 @@ function setUnits(unitVal){
 } 
 
 function setThemes(themeVal){
+    let val, queryIndx;
     let anchorTags = document.querySelectorAll('.menuPane a');
+    
+    val = anchorTags[0].getAttribute('href');
+    queryIndx = val.indexOf('?');
+    val = val.substring(0,queryIndx+1) + `theme=${themeVal}`;
+
+    anchorTags[0].setAttribute('href',val);
+
     for(let i=1;i<anchorTags.length;++i){
-        let val = anchorTags[i].getAttribute('href');
-        let queryIndx = val.indexOf('?');
+        val = anchorTags[i].getAttribute('href');
+        queryIndx = val.indexOf('?');
 
         val = val.substring(0,queryIndx+1) + `theme=${themeVal}&` + val.substring(val.indexOf('&')+1);
         anchorTags[i].setAttribute('href',val);
