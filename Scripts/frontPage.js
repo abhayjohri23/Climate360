@@ -3,7 +3,7 @@ const theme = urlParams.get('theme');
 
 if(theme === 'light'){
     document.documentElement.style.setProperty('--frontBox-color', '#eaecef');
-    document.documentElement.style.setProperty('--background-color', '#f5f5f5');
+    document.documentElement.style.setProperty('--background-color', '#dedede');
     document.documentElement.style.setProperty('--font-color','#202b3b');
 }
 else if(theme === 'dark'){

@@ -5,8 +5,9 @@
     --icon-color-after: #F0F1F1;
     --background-color: #0b131e;
     --box-color:#202B3B;
-    --font-white:#e0e1e1;
+    --font-color:#e0e1e1;
     --scroller-thumb-color:rgba(116, 121, 129, 0.7);
+    --whichDay-color:#a2a8af;
 }
 
 body{
@@ -21,7 +22,7 @@ body{
 .box {
     display: inline-block;
     border-radius: 20px;
-    background-color: #202B3B;
+    background-color: var(--box-color);
     cursor: pointer;
 }
 
@@ -42,7 +43,7 @@ body{
 
 .box:nth-child(2){
     grid-column: span 3;
-    color: #e0e1e1; 
+    color: var(--font-color); 
     font-weight: 400; 
     height:32px; 
     border:none; 
@@ -148,7 +149,7 @@ body{
 }
 
 .middlePane p:last-child{
-    color: var(--font-white);
+    color: var(--font-color);
     font-size: 20px;
     font-family: 'Abhaya Libre',serif;
     grid-column: 5;
@@ -187,7 +188,7 @@ body{
     font-family: 'Abhaya Libre',serif;
     margin-top: 2px; margin-bottom: 0px;
     background-color: inherit;
-    color: #F0F1F1;
+    color: var(--icon-color-after);
     font-size: 40px;
     font-weight:550;
 }
@@ -195,7 +196,7 @@ body{
 .data:nth-child(2) {
     font-family: 'Abhaya Libre',serif;
     margin: 0px 1.5px 3px;
-    color: #8c929c;
+    color: var(--whichDay-color);
     font-size: 15px;
     text-justify:kashida;
     font-weight: 550;
@@ -203,14 +204,12 @@ body{
 
 .data:nth-child(3) {
     font-family: 'Abhaya Libre',serif;
-    color: #F0F1F1;
-    /* margin-top: 40px; */
+    color: var(--font-color);
     font-size: 40px;
     font-weight: 550;
 }
 
 #dailyForecast{
-    color: #737880;
     font-weight: 600;
     display: flex;
     flex-direction: row;
@@ -230,7 +229,7 @@ body{
 }
 
 .divSpans {
-    color: whitesmoke;
+    color: var(--font-color);
     font-size: 16px;
     font-weight: 550;
 }
@@ -264,7 +263,10 @@ body{
     align-items: flex-start;
     justify-content: space-between;
     row-gap: 0.1rem;
+}
 
+#chanceOfRain{
+    color:var(--icon-color-before);
 }
 
 .daysFCitem {
@@ -272,7 +274,7 @@ body{
     font-weight: 600;
     width: 90%;
     height: 12vh;
-    border-bottom: 0.5px solid #737880;
+    border-bottom: 0.5px solid var(--icon-color-before);
     display: grid;
     column-gap: 0.5rem;
     grid-template-columns:20% 55% 20%;
@@ -280,7 +282,7 @@ body{
 
 .whichDay{
     grid-column: 1/span 1;
-    color: #8c929c;
+    color: var(--whichDay-color);
     font-size: 14px;
     font-weight: 550;
     padding-top: 12.5%;
@@ -295,7 +297,7 @@ body{
     justify-content: flex-start;
 }
 .whatWeather{
-    color: #e0e1e1;
+    color: var(--font-color);
     font-size: 13px;
     font-weight: 580;
     padding-top: 5%;
@@ -318,7 +320,7 @@ body{
 }
 .max_min{
     grid-column: 3/span 1;
-    color: #8c929c;
+    color: var(--icon-color-before);
     font-size: 14px;
     font-weight: 580;
     padding-top: 12.5%;
