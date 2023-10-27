@@ -1,0 +1,1 @@
+const myPrivateKey = '4ac2f3fb5emshc67eb99560f7297p1a798fjsn3cbbb93721ed';
