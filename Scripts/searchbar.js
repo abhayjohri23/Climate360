@@ -175,6 +175,34 @@ const usaUnits = ['°F','mph','%','miles','°F','%','°F','%'];
 
 let placesArr, currentForecastData , dailyForecastData , hourlyForecastData;
 
+function setUnits(unitVal){
+    let anchorTags = document.querySelectorAll('.menuPane a');
+    for(let i=1;i<anchorTags.length;++i){
+        let val = anchorTags[i].getAttribute('href');
+        let queryIndx = val.indexOf('&');
+        console.log(queryIndx);
+        
+        val = val.substring(0,queryIndx+1) + `units=${unitVal}`;
+        
+        // console.log(val);
+        anchorTags[i].setAttribute('href',val);
+    }
+} 
+
+function setThemes(themeVal){
+    let anchorTags = document.querySelectorAll('.menuPane a');
+    for(let i=1;i<anchorTags.length;++i){
+        let val = anchorTags[i].getAttribute('href');
+        let queryIndx = val.indexOf('?');
+
+        val = val.substring(0,queryIndx+1) + `theme=${themeVal}&` + val.substring(val.indexOf('&')+1);
+        anchorTags[i].setAttribute('href',val);
+    }
+}
+
+setUnits(units);
+setThemes(theme);
+
 function searchWeather(whichPage){
     const inputFieldText = document.querySelector('input.box').value;
     const objects = getPlaceDetails(inputFieldText);
@@ -612,3 +640,5 @@ function initialLoad(whichPage){
         
     }
 }
+
+
