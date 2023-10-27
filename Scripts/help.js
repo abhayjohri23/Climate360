@@ -52,13 +52,6 @@ for(let sectn of sections){
         });
         
         
-        // async function getResponse(text){
-        //     contentTag.innerHTML = text.then(resp => {
-        //         text.text();
-        //     });
-        // }
-
-        // getResponse(text);
         
     });
 }

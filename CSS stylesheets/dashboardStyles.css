@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Libre+Baskerville&family=Ubuntu&display=swap');
 
+:root{
+    --icon-color-before: #737880;
+    --icon-color-after: #F0F1F1;
+    --background-color: #0b131e;
+    --condition-heading-color: #8c929c;
+    --box-color:#202B3B;
+    --font-white:#e0e1e1;
+    --scroller-thumb-color:rgba(116, 121, 129, 0.7);
+}
 
 body{
     margin: 0%;
@@ -7,13 +16,13 @@ body{
     height: 100vh;
     font-family: 'Abhaya Libre',serif;
     font-size: 14px;
-    background-color: #0b131e;
+    background-color: var(--background-color);
 
 }
 .box {
     display: inline-block;
     border-radius: 1.5rem;
-    background-color: #202B3B;
+    background-color: var(--box-color);
 }
 
 #tile-container {
@@ -48,7 +57,10 @@ body{
     grid-row-start: 2;
     grid-column: span 3;
     background-color: inherit;
-
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: space-between;
 }
 
 .box:nth-child(4) {
@@ -57,6 +69,14 @@ body{
     top: -10px;
     grid-row-start: 3;
     grid-column: span 3;
+}
+
+.box:nth-child(4) p{
+    color: var(--icon-color-before); 
+    margin-top: 0.9rem; 
+    margin-left: 0.9rem; 
+    font-size: 14px; 
+    font-weight: 650;
 }
 
 .box:nth-child(5) {
@@ -89,6 +109,12 @@ body{
     border-radius: 1.5rem;
 }
 
+#heading{
+    color:var(--icon-color-before); 
+    display:flex; 
+    flex-wrap: nowrap; 
+    justify-content: space-between;
+}
 .icon {
     background: url('../Icons and Images/3d-weather-logo.png');
     height: 25px;
@@ -145,6 +171,12 @@ body{
     font-weight: 550;
 }
 
+#chanceOfRain{
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--icon-color-before);
+}
+
 .mainImageIcon{
     position: relative;
     top: 1.25rem;
@@ -159,7 +191,7 @@ body{
 }
 
 #dailyForecast{
-    color: #737880;
+    color: var(--icon-color-before);
     font-weight: 600;
     display: flex;
     flex-direction: row;
@@ -183,7 +215,7 @@ body{
 }
 
 #seeMoreBtn{
-    color: whitesmoke;
+    color: var(--font-white);
     font-weight: 600;
     font-size: 11.5px;
     border-radius: 0.925rem;
@@ -205,7 +237,7 @@ body{
 }
 
 .divSpans {
-    color: whitesmoke;
+    color: var(--font-white);
     font-size: 14px;
     font-weight: 550;
 }
@@ -260,7 +292,7 @@ body{
     font-weight: 600;
     width: 90%;
     height: 12vh;
-    border-bottom: 0.5px solid #737880;
+    border-bottom: 0.5px solid var(--icon-color-before);
     display: grid;
     column-gap: 0.5rem;
     grid-template-columns:20% 55% 20%;
@@ -283,7 +315,7 @@ body{
     justify-content: flex-start;
 }
 .whatWeather{
-    color: #e0e1e1;
+    color: var(--font-white);
     font-size: 14px;
     font-weight: 580;
     padding-top: 8.5%;
@@ -291,14 +323,14 @@ body{
 
 .max_min{
     grid-column: 3/span 1;
-    color: #8c929c;
+    color: var(--icon-color-before);
     font-size: 14px;
     font-weight: 580;
     padding-top: 22%;
 }
 
 .airCondHeader {
-    color:#8c929c;
+    color:var(--condition-heading-color);
     font-size: 15px;
     display: flex;
     flex-wrap: nowrap;
@@ -316,7 +348,7 @@ body{
     margin-left: 2rem;
     font-size: 24px;
     font-weight: 600;
-    color: #e0e1e1;
+    color: var(--font-white);
 }
 
 
@@ -334,7 +366,6 @@ div.fcIcon{
 }
 
 ::-webkit-scrollbar{
-    background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     height: 80vh;
     border-radius: 100vw;
@@ -343,11 +374,10 @@ div.fcIcon{
 
 ::-webkit-scrollbar-thumb{
     border-radius: 100vw;
-    background-color: rgba(116, 121, 129, 0.7);
+    background-color: var(--scroller-thumb-color);
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(116, 121, 129, 0);
     width: .5rem;
     border-radius: 100vw;
     margin-block: 1em;
