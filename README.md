@@ -33,19 +33,18 @@
 
 **i. Scrollbars can independently change positions.** (Positions or the selected units of measures are synced with previous pages) 
 
-![image](https://github.com/abhayjohri23/Climate360/assets/124622368/b7f9ff39-2d43-4fa7-a492-0bc16dde7127)
+![image](https://github.com/abhayjohri23/Climate360/assets/124622368/cd9ca357-b87b-43ec-9d35-21ca94ab6693)
 
 **j. Changed Theme from dark to lite.** This change will be relfected on next pages as well.
 
-![image](https://github.com/abhayjohri23/Climate360/assets/124622368/cd9ca357-b87b-43ec-9d35-21ca94ab6693)
+![image](https://github.com/abhayjohri23/Climate360/assets/124622368/4ff40237-8b1b-43ad-81b7-d37b6ffbd410)
 
 **k. Help and Support Features:**
 
-![image](https://github.com/abhayjohri23/Climate360/assets/124622368/4ff40237-8b1b-43ad-81b7-d37b6ffbd410)
+![image](https://github.com/abhayjohri23/Climate360/assets/124622368/abbfcfd9-a15f-4e44-9a45-c5b9e2f18e9f)
 
 l. On clicking an option, the data is displayed (with animation like arrow direction changes eventually) - to display the details on side panel.
 
-![image](https://github.com/abhayjohri23/Climate360/assets/124622368/abbfcfd9-a15f-4e44-9a45-c5b9e2f18e9f)
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/bea9f6c2-a400-4b80-a807-872afd9e007b)
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/2cac64c2-e8bd-4df4-8a77-f60d32eabb8c)
 
