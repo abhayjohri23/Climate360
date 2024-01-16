@@ -27,22 +27,23 @@
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/90f04b59-fdaa-40db-b2df-7daca82a145e)
 
-**g. Configuration Page :** To configure theme of the page - dark or lite and other units of weather conditions. Eg. Miles per sec (MPS) for wind speed can be changed to Miles per hour (MPHR). 
+**h. Configuration Page :** To configure theme of the page - dark or lite and other units of weather conditions. Eg. Miles per sec (MPS) for wind speed can be changed to Miles per hour (MPHR). 
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/681c3bd5-0062-4a93-919c-10d47ecbb409)
 
-**h. Changed Theme from dark to lite.** This change will be relfected on next pages as well.
+**i. Scrollbars can independently change positions.** (Positions or the selected units of measures are synced with previous pages) 
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/b7f9ff39-2d43-4fa7-a492-0bc16dde7127)
 
-**i. Help and Support Features:**
+**j. Changed Theme from dark to lite.** This change will be relfected on next pages as well.
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/cd9ca357-b87b-43ec-9d35-21ca94ab6693)
 
-j. On clicking an option, the data is displayed (with animation like arrow direction changes eventually) - to display the details on side panel.
+**k. Help and Support Features:**
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/4ff40237-8b1b-43ad-81b7-d37b6ffbd410)
 
+l. On clicking an option, the data is displayed (with animation like arrow direction changes eventually) - to display the details on side panel.
 
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/abbfcfd9-a15f-4e44-9a45-c5b9e2f18e9f)
 ![image](https://github.com/abhayjohri23/Climate360/assets/124622368/bea9f6c2-a400-4b80-a807-872afd9e007b)
